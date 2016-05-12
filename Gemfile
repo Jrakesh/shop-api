@@ -46,3 +46,8 @@ end
 
 gem 'grape', '0.9.0'
 gem 'rack-cors', :require => 'rack/cors'
+gem 'rspec-rails'
+gem 'json'
+gem 'rest-client'
+gem 'faker'
+gem 'pry'

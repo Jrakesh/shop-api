@@ -1,0 +1,116 @@
+  [1m[36m (350.3ms)[0m  [1mDROP DATABASE IF EXISTS "google-map_test"[0m
+  [1m[35m (1131.8ms)[0m  CREATE DATABASE "google-map_test" ENCODING = 'unicode'
+  [1m[36mSQL (36.0ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (138.2ms)[0m  CREATE TABLE "shops" ("id" serial primary key, "name" character varying(255), "address" character varying(255), "latitude" character varying(255), "longitude" character varying(255), "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (7.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (56.3ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.5ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (7.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160510130920')
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (233.0ms)[0m  [1mDROP DATABASE IF EXISTS "google-map_test"[0m
+  [1m[35m (582.3ms)[0m  CREATE DATABASE "google-map_test" ENCODING = 'unicode'
+  [1m[36mSQL (2.6ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (92.0ms)[0m  CREATE TABLE "shops" ("id" serial primary key, "name" character varying(255), "address" character varying(255), "latitude" character varying(255), "longitude" character varying(255), "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (10.4ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (55.1ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.5ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (7.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160510130920')
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (218.9ms)[0m  [1mDROP DATABASE IF EXISTS "google-map_test"[0m
+  [1m[35m (565.6ms)[0m  CREATE DATABASE "google-map_test" ENCODING = 'unicode'
+  [1m[36mSQL (2.6ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (100.7ms)[0m  CREATE TABLE "shops" ("id" serial primary key, "name" character varying(255), "address" character varying(255), "latitude" character varying(255), "longitude" character varying(255), "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (11.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (46.7ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.5ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (7.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160510130920')
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (221.2ms)[0m  [1mDROP DATABASE IF EXISTS "google-map_test"[0m
+  [1m[35m (582.3ms)[0m  CREATE DATABASE "google-map_test" ENCODING = 'unicode'
+  [1m[36mSQL (2.7ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (102.9ms)[0m  CREATE TABLE "shops" ("id" serial primary key, "name" character varying(255), "address" character varying(255), "latitude" character varying(255), "longitude" character varying(255), "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (3.4ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (55.1ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.4ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (7.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160510130920')
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (224.7ms)[0m  [1mDROP DATABASE IF EXISTS "google-map_test"[0m
+  [1m[35m (590.6ms)[0m  CREATE DATABASE "google-map_test" ENCODING = 'unicode'
+  [1m[36mSQL (1.8ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (116.7ms)[0m  CREATE TABLE "shops" ("id" serial primary key, "name" character varying(255), "address" character varying(255), "latitude" character varying(255), "longitude" character varying(255), "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (10.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (64.7ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.4ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (7.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160510130920')
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (226.1ms)[0m  [1mDROP DATABASE IF EXISTS "google-map_test"[0m
+  [1m[35m (590.7ms)[0m  CREATE DATABASE "google-map_test" ENCODING = 'unicode'
+  [1m[36mSQL (2.6ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (98.4ms)[0m  CREATE TABLE "shops" ("id" serial primary key, "name" character varying(255), "address" character varying(255), "latitude" character varying(255), "longitude" character varying(255), "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (10.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (55.7ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.5ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (7.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160510130920')
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (225.2ms)[0m  [1mDROP DATABASE IF EXISTS "google-map_test"[0m
+  [1m[35m (590.6ms)[0m  CREATE DATABASE "google-map_test" ENCODING = 'unicode'
+  [1m[36mSQL (2.7ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (100.7ms)[0m  CREATE TABLE "shops" ("id" serial primary key, "name" character varying(255), "address" character varying(255), "latitude" character varying(255), "longitude" character varying(255), "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (4.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (46.7ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.4ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (7.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160510130920')
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (248.7ms)[0m  [1mDROP DATABASE IF EXISTS "google-map_test"[0m
+  [1m[35m (606.2ms)[0m  CREATE DATABASE "google-map_test" ENCODING = 'unicode'
+  [1m[36mSQL (3.3ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (93.0ms)[0m  CREATE TABLE "shops" ("id" serial primary key, "name" character varying(255), "address" character varying(255), "latitude" character varying(255), "longitude" character varying(255), "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (10.3ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (55.4ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.4ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (7.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160510130920')
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (221.5ms)[0m  [1mDROP DATABASE IF EXISTS "google-map_test"[0m
+  [1m[35m (590.6ms)[0m  CREATE DATABASE "google-map_test" ENCODING = 'unicode'
+  [1m[36mSQL (2.6ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (101.9ms)[0m  CREATE TABLE "shops" ("id" serial primary key, "name" character varying(255), "address" character varying(255), "latitude" character varying(255), "longitude" character varying(255), "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (3.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (54.9ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.5ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (7.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160510130920')
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (223.9ms)[0m  [1mDROP DATABASE IF EXISTS "google-map_test"[0m
+  [1m[35m (590.6ms)[0m  CREATE DATABASE "google-map_test" ENCODING = 'unicode'
+  [1m[36mSQL (2.9ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (87.8ms)[0m  CREATE TABLE "shops" ("id" serial primary key, "name" character varying(255), "address" character varying(255), "latitude" character varying(255), "longitude" character varying(255), "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (3.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (54.9ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.4ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (7.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160510130920')
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (226.1ms)[0m  [1mDROP DATABASE IF EXISTS "google-map_test"[0m
+  [1m[35m (607.5ms)[0m  CREATE DATABASE "google-map_test" ENCODING = 'unicode'
+  [1m[36mSQL (3.0ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (99.8ms)[0m  CREATE TABLE "shops" ("id" serial primary key, "name" character varying(255), "address" character varying(255), "latitude" character varying(255), "longitude" character varying(255), "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (3.3ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (46.6ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.4ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (7.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160510130920')
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (115.7ms)[0m  [1mDROP DATABASE IF EXISTS "google-map_test"[0m
+  [1m[35m (565.7ms)[0m  CREATE DATABASE "google-map_test" ENCODING = 'unicode'
+  [1m[36mSQL (2.6ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (95.9ms)[0m  CREATE TABLE "shops" ("id" serial primary key, "name" character varying(255), "address" character varying(255), "latitude" character varying(255), "longitude" character varying(255), "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (3.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (63.4ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.5ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (7.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160510130920')
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m

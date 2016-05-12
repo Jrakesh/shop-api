@@ -226,3 +226,1660 @@ Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-11 16:34:50 +0530
 
 Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-11 16:43:13 +0530
   [1m[36mShop Load (0.6ms)[0m  [1mSELECT "shops".* FROM "shops"[0m
+  [1m[36m (7.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (72.5ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateShops (20160510130920)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (66.2ms)[0m  [1mCREATE TABLE "shops" ("id" serial primary key, "name" character varying(255), "address" character varying(255), "latitude" character varying(255), "longitude" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160510130920"]]
+  [1m[36m (13.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 11:29:38 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 11:30:00 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 11:32:31 +0530
+Error occurred while parsing request parameters.
+Contents:
+
+{
+	"name": "Sharma Shopping Centre",
+    "address": "Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340"
+    "latitude": "23.0657155",
+    "longitude": "72.6298079"
+}
+
+ActionDispatch::ParamsParser::ParseError (795: unexpected token at '{
+	"name": "Sharma Shopping Centre",
+    "address": "Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340"
+    "latitude": "23.0657155",
+    "longitude": "72.6298079"
+}'):
+  actionpack (4.0.2) lib/action_dispatch/middleware/params_parser.rb:53:in `rescue in parse_formatted_parameters'
+  actionpack (4.0.2) lib/action_dispatch/middleware/params_parser.rb:32:in `parse_formatted_parameters'
+  actionpack (4.0.2) lib/action_dispatch/middleware/params_parser.rb:23:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/flash.rb:241:in `call'
+  rack (1.5.5) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.5) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.2) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.2) lib/active_record/migration.rb:369:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:373:in `_run__1959514911874868312__call__callbacks'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.5) lib/rack/sendfile.rb:112:in `call'
+  rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (19.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (58.2ms)
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 11:32:36 +0530
+Error occurred while parsing request parameters.
+Contents:
+
+{
+	"name": "Sharma Shopping Centre",
+    "address": "Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340"
+    "latitude": "23.0657155",
+    "longitude": "72.6298079"
+}
+
+ActionDispatch::ParamsParser::ParseError (795: unexpected token at '{
+	"name": "Sharma Shopping Centre",
+    "address": "Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340"
+    "latitude": "23.0657155",
+    "longitude": "72.6298079"
+}'):
+  actionpack (4.0.2) lib/action_dispatch/middleware/params_parser.rb:53:in `rescue in parse_formatted_parameters'
+  actionpack (4.0.2) lib/action_dispatch/middleware/params_parser.rb:32:in `parse_formatted_parameters'
+  actionpack (4.0.2) lib/action_dispatch/middleware/params_parser.rb:23:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/flash.rb:241:in `call'
+  rack (1.5.5) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.5) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.2) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.2) lib/active_record/migration.rb:369:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:373:in `_run__1959514911874868312__call__callbacks'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.5) lib/rack/sendfile.rb:112:in `call'
+  rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.1ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.9ms)
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 11:32:37 +0530
+Error occurred while parsing request parameters.
+Contents:
+
+{
+	"name": "Sharma Shopping Centre",
+    "address": "Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340"
+    "latitude": "23.0657155",
+    "longitude": "72.6298079"
+}
+
+ActionDispatch::ParamsParser::ParseError (795: unexpected token at '{
+	"name": "Sharma Shopping Centre",
+    "address": "Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340"
+    "latitude": "23.0657155",
+    "longitude": "72.6298079"
+}'):
+  actionpack (4.0.2) lib/action_dispatch/middleware/params_parser.rb:53:in `rescue in parse_formatted_parameters'
+  actionpack (4.0.2) lib/action_dispatch/middleware/params_parser.rb:32:in `parse_formatted_parameters'
+  actionpack (4.0.2) lib/action_dispatch/middleware/params_parser.rb:23:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/flash.rb:241:in `call'
+  rack (1.5.5) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.5) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.2) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.2) lib/active_record/migration.rb:369:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:373:in `_run__1959514911874868312__call__callbacks'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.5) lib/rack/sendfile.rb:112:in `call'
+  rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.1ms)
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 11:33:41 +0530
+  [1m[35mShop Load (9.3ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Sharma Shopping Centre' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (83.1ms)[0m  INSERT INTO "shops" ("address", "created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["address", "Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340"], ["created_at", Thu, 12 May 2016 06:03:41 UTC +00:00], ["latitude", "23.0657155"], ["longitude", "72.6298079"], ["name", "Sharma Shopping Centre"], ["updated_at", Thu, 12 May 2016 06:03:41 UTC +00:00]]
+  [1m[36m (4.2ms)[0m  [1mCOMMIT[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 11:33:45 +0530
+  [1m[35mShop Load (7.8ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Sharma Shopping Centre' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-12 12:22:24 +0530
+  [1m[36mShop Load (0.4ms)[0m  [1mSELECT "shops".* FROM "shops"[0m
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-12 13:02:52 +0530
+  [1m[35mShop Load (0.3ms)[0m  SELECT "shops".* FROM "shops"
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-12 13:04:48 +0530
+  [1m[36mShop Load (0.4ms)[0m  [1mSELECT "shops".* FROM "shops"[0m
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-12 13:07:37 +0530
+  [1m[35mShop Load (0.4ms)[0m  SELECT "shops".* FROM "shops"
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-12 13:08:18 +0530
+  [1m[36mShop Load (0.4ms)[0m  [1mSELECT "shops".* FROM "shops"[0m
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-12 13:14:16 +0530
+  [1m[35mShop Load (0.4ms)[0m  SELECT "shops".* FROM "shops"
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-12 13:15:09 +0530
+  [1m[36mShop Load (0.4ms)[0m  [1mSELECT "shops".* FROM "shops"[0m
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-12 13:15:28 +0530
+  [1m[35mShop Load (0.3ms)[0m  SELECT "shops".* FROM "shops"
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-12 13:16:02 +0530
+  [1m[36mShop Load (0.3ms)[0m  [1mSELECT "shops".* FROM "shops"[0m
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-12 13:18:33 +0530
+  [1m[35mShop Load (0.3ms)[0m  SELECT "shops".* FROM "shops"
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-12 13:18:49 +0530
+  [1m[36mShop Load (0.4ms)[0m  [1mSELECT "shops".* FROM "shops"[0m
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-12 13:19:18 +0530
+  [1m[35mShop Load (0.4ms)[0m  SELECT "shops".* FROM "shops"
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-12 13:19:53 +0530
+  [1m[36mShop Load (0.4ms)[0m  [1mSELECT "shops".* FROM "shops"[0m
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-12 13:20:01 +0530
+  [1m[35mShop Load (0.3ms)[0m  SELECT "shops".* FROM "shops"
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-12 13:20:31 +0530
+  [1m[36mShop Load (0.6ms)[0m  [1mSELECT "shops".* FROM "shops"[0m
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-12 13:21:08 +0530
+  [1m[35mShop Load (0.3ms)[0m  SELECT "shops".* FROM "shops"
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-12 13:21:27 +0530
+  [1m[36mShop Load (0.3ms)[0m  [1mSELECT "shops".* FROM "shops"[0m
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-12 13:21:38 +0530
+  [1m[35mShop Load (0.5ms)[0m  SELECT "shops".* FROM "shops"
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-12 13:24:55 +0530
+  [1m[36mShop Load (0.3ms)[0m  [1mSELECT "shops".* FROM "shops"[0m
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-12 13:26:15 +0530
+  [1m[35mShop Load (0.5ms)[0m  SELECT "shops".* FROM "shops"
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-12 13:29:58 +0530
+  [1m[36mShop Load (0.4ms)[0m  [1mSELECT "shops".* FROM "shops"[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 13:31:31 +0530
+  [1m[35mShop Load (0.4ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Goyal Shopping Center' AND "shops"."address" = 'Goyal Building, S.V. Road, Lokmanya Tilak Rd, Sundar Nagar, Borivali West, Mumbai, Maharashtra 400092' AND "shops"."latitude" = '19.0826881' AND "shops"."longitude" = '72.8804981'
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "shops" ("address", "created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["address", "Goyal Building, S.V. Road, Lokmanya Tilak Rd, Sundar Nagar, Borivali West, Mumbai, Maharashtra 400092"], ["created_at", Thu, 12 May 2016 08:01:31 UTC +00:00], ["latitude", "19.0826881"], ["longitude", "72.8804981"], ["name", "Goyal Shopping Center"], ["updated_at", Thu, 12 May 2016 08:01:31 UTC +00:00]]
+  [1m[36m (34.3ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-12 13:31:34 +0530
+  [1m[35mShop Load (0.4ms)[0m  SELECT "shops".* FROM "shops"
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-12 13:32:30 +0530
+  [1m[36mShop Load (0.4ms)[0m  [1mSELECT "shops".* FROM "shops"[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 13:33:29 +0530
+  [1m[35mShop Load (0.4ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'SkyBOX, Inc. Shop in the U.S. and Europe' AND "shops"."address" = '8601 NW 27th St, Doral, FL 33122, USA' AND "shops"."latitude" = '34.2392616' AND "shops"."longitude" = '-116.8900662'
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "shops" ("address", "created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["address", "8601 NW 27th St, Doral, FL 33122, USA"], ["created_at", Thu, 12 May 2016 08:03:29 UTC +00:00], ["latitude", "34.2392616"], ["longitude", "-116.8900662"], ["name", "SkyBOX, Inc. Shop in the U.S. and Europe"], ["updated_at", Thu, 12 May 2016 08:03:29 UTC +00:00]]
+  [1m[36m (34.8ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-12 13:33:32 +0530
+  [1m[35mShop Load (0.4ms)[0m  SELECT "shops".* FROM "shops"
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-12 13:39:49 +0530
+  [1m[36mShop Load (0.5ms)[0m  [1mSELECT "shops".* FROM "shops"[0m
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-12 13:41:25 +0530
+  [1m[35mShop Load (0.4ms)[0m  SELECT "shops".* FROM "shops"
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-12 13:41:45 +0530
+  [1m[36mShop Load (0.4ms)[0m  [1mSELECT "shops".* FROM "shops"[0m
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-12 13:42:21 +0530
+  [1m[35mShop Load (0.4ms)[0m  SELECT "shops".* FROM "shops"
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-12 13:47:28 +0530
+  [1m[36mShop Load (0.5ms)[0m  [1mSELECT "shops".* FROM "shops"[0m
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-12 13:49:19 +0530
+  [1m[35mShop Load (0.5ms)[0m  SELECT "shops".* FROM "shops"
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-12 13:52:49 +0530
+  [1m[36mShop Load (0.5ms)[0m  [1mSELECT "shops".* FROM "shops"[0m
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-12 13:52:54 +0530
+  [1m[35mShop Load (0.4ms)[0m  SELECT "shops".* FROM "shops"
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-12 13:54:06 +0530
+  [1m[36mShop Load (0.7ms)[0m  [1mSELECT "shops".* FROM "shops"[0m
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-12 13:54:34 +0530
+  [1m[35mShop Load (0.3ms)[0m  SELECT "shops".* FROM "shops"
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-12 14:59:14 +0530
+  [1m[36mShop Load (0.3ms)[0m  [1mSELECT "shops".* FROM "shops"[0m
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-12 14:59:37 +0530
+  [1m[35mShop Load (0.3ms)[0m  SELECT "shops".* FROM "shops"
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-12 14:59:44 +0530
+  [1m[36mShop Load (0.5ms)[0m  [1mSELECT "shops".* FROM "shops"[0m
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-12 15:08:27 +0530
+  [1m[35mShop Load (0.3ms)[0m  SELECT "shops".* FROM "shops"
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-12 15:41:52 +0530
+  [1m[36mShop Load (0.5ms)[0m  [1mSELECT "shops".* FROM "shops"[0m
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-12 15:41:58 +0530
+  [1m[35mShop Load (0.4ms)[0m  SELECT "shops".* FROM "shops"
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-12 15:42:13 +0530
+  [1m[36mShop Load (1.2ms)[0m  [1mSELECT "shops".* FROM "shops"[0m
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-12 15:57:39 +0530
+  [1m[35mShop Load (0.5ms)[0m  SELECT "shops".* FROM "shops"
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-12 15:57:50 +0530
+  [1m[36mShop Load (0.4ms)[0m  [1mSELECT "shops".* FROM "shops"[0m
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-12 15:57:55 +0530
+  [1m[35mShop Load (0.4ms)[0m  SELECT "shops".* FROM "shops"
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-12 15:58:44 +0530
+  [1m[36mShop Load (0.4ms)[0m  [1mSELECT "shops".* FROM "shops"[0m
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-12 16:08:11 +0530
+  [1m[35mShop Load (0.5ms)[0m  SELECT "shops".* FROM "shops"
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-12 16:08:28 +0530
+  [1m[36mShop Load (0.4ms)[0m  [1mSELECT "shops".* FROM "shops"[0m
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-12 16:08:52 +0530
+  [1m[35mShop Load (0.4ms)[0m  SELECT "shops".* FROM "shops"
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-12 16:10:12 +0530
+  [1m[36mShop Load (0.4ms)[0m  [1mSELECT "shops".* FROM "shops"[0m
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-12 16:12:41 +0530
+  [1m[35mShop Load (0.4ms)[0m  SELECT "shops".* FROM "shops"
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-12 16:12:52 +0530
+  [1m[36mShop Load (0.4ms)[0m  [1mSELECT "shops".* FROM "shops"[0m
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-12 16:13:28 +0530
+  [1m[35mShop Load (0.4ms)[0m  SELECT "shops".* FROM "shops"
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 16:15:16 +0530
+  [1m[36mShop Load (54.9ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Deichmann Shoes HO' AND "shops"."address" = '18 Main St, Lubenham, Market Harborough, Leicestershire LE16 9TF, UK' AND "shops"."latitude" = '53.2873616' AND "shops"."longitude" = '-6.7503519'[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (48.9ms)[0m  [1mINSERT INTO "shops" ("address", "created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["address", "18 Main St, Lubenham, Market Harborough, Leicestershire LE16 9TF, UK"], ["created_at", Thu, 12 May 2016 10:45:16 UTC +00:00], ["latitude", "53.2873616"], ["longitude", "-6.7503519"], ["name", "Deichmann Shoes HO"], ["updated_at", Thu, 12 May 2016 10:45:16 UTC +00:00]]
+  [1m[35m (62.3ms)[0m  COMMIT
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-12 16:15:16 +0530
+  [1m[36mShop Load (0.3ms)[0m  [1mSELECT "shops".* FROM "shops"[0m
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-12 16:17:29 +0530
+  [1m[35mShop Load (0.4ms)[0m  SELECT "shops".* FROM "shops"
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 17:06:45 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 17:07:54 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 17:10:05 +0530
+  [1m[36mShop Load (0.6ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Sharma Shopping Centre' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 17:15:16 +0530
+  [1m[35mShop Load (0.4ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Sharma Shopping Centre' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 17:32:48 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mShop Load (1.0ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Sharma Shopping Centre' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 17:34:22 +0530
+  [1m[36mShop Load (0.5ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Sharma Shopping Centre' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 17:34:47 +0530
+  [1m[35mShop Load (0.4ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Sharma Shopping Centre' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 17:36:14 +0530
+  [1m[36mShop Load (0.6ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Sharma Shopping Centre' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 17:36:22 +0530
+  [1m[35mShop Load (0.6ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Sharma Shopping Centre' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 17:36:33 +0530
+  [1m[36mShop Load (0.5ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Sharma Shopping Centre' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 17:37:22 +0530
+  [1m[35mShop Load (0.6ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Sharma Shopping Centre' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 17:53:01 +0530
+  [1m[36mShop Load (0.6ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Tressa Okuneva' AND "shops"."address" = '2378 Bayer Hill, Nicolas Canyon, Delphachester, Minnesota, Venezuela, 76213-5987' AND "shops"."latitude" = '-36.06705990415285' AND "shops"."longitude" = '82.73279772745235'[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (58.8ms)[0m  [1mINSERT INTO "shops" ("address", "created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["address", "2378 Bayer Hill, Nicolas Canyon, Delphachester, Minnesota, Venezuela, 76213-5987"], ["created_at", Thu, 12 May 2016 12:23:01 UTC +00:00], ["latitude", "-36.06705990415285"], ["longitude", "82.73279772745235"], ["name", "Tressa Okuneva"], ["updated_at", Thu, 12 May 2016 12:23:01 UTC +00:00]]
+  [1m[35m (6.2ms)[0m  COMMIT
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-12 17:53:13 +0530
+  [1m[36mShop Load (0.4ms)[0m  [1mSELECT "shops".* FROM "shops"[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 18:28:35 +0530
+  [1m[35mShop Load (0.6ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Sharma Shopping Centre' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+  [1m[36mShop Load (0.5ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+  [1m[35mShop Load (0.2ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340'
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 18:28:43 +0530
+  [1m[36mShop Load (0.5ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Sharma Shopping Centre1' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "shops" ("address", "created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["address", "Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340"], ["created_at", Thu, 12 May 2016 12:58:43 UTC +00:00], ["latitude", "23.0657155"], ["longitude", "72.6298079"], ["name", "Sharma Shopping Centre1"], ["updated_at", Thu, 12 May 2016 12:58:43 UTC +00:00]]
+  [1m[35m (13.3ms)[0m  COMMIT
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 18:30:32 +0530
+  [1m[36mShop Load (0.2ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Sharma Shopping Centre1' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 18:30:38 +0530
+  [1m[35mShop Load (0.5ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Sharma Shopping Centre2' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+  [1m[36mShop Load (0.3ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 18:30:44 +0530
+  [1m[35mShop Load (0.5ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Sharma Shopping Centre2' AND "shops"."address" = '1Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+  [1m[36mShop Load (0.3ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 18:32:51 +0530
+  [1m[35mShop Load (0.2ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Sharma Shopping Centre2' AND "shops"."address" = '1Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657150' AND "shops"."longitude" = '72.6298070'
+  [1m[36mShop Load (0.2ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."latitude" = '23.0657150' AND "shops"."longitude" = '72.6298070'[0m
+  [1m[35mShop Load (0.2ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."address" = '1Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340'
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 18:34:24 +0530
+  [1m[36mShop Load (0.5ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Sharma Shopping Centre2' AND "shops"."address" = '1Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657150' AND "shops"."longitude" = '72.6298070'[0m
+  [1m[35mShop Load (0.5ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."latitude" = '23.0657150' AND "shops"."longitude" = '72.6298070'
+  [1m[36mShop Load (0.3ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."address" = '1Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340'[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 18:45:40 +0530
+
+SyntaxError (/home/nesooft/Rahul-Sharma/RubyMine-Project-Git/google-map-api/lib/api/v1/shops.rb:15: syntax error, unexpected keyword_true, expecting ':'
+...&& latitude <= 90 ? return true : return false
+...                               ^
+/home/nesooft/Rahul-Sharma/RubyMine-Project-Git/google-map-api/lib/api/v1/shops.rb:19: syntax error, unexpected keyword_true, expecting ':'
+... longitude <= 180 ? return true : return false
+...                               ^):
+  lib/api/v1/root.rb:4:in `<class:Root>'
+  lib/api/v1/root.rb:3:in `<module:V1>'
+  lib/api/v1/root.rb:2:in `<module:API>'
+  lib/api/v1/root.rb:1:in `<top (required)>'
+  lib/api/root.rb:4:in `<class:Root>'
+  lib/api/root.rb:2:in `<module:API>'
+  lib/api/root.rb:1:in `<top (required)>'
+  config/routes.rb:2:in `block in <top (required)>'
+  config/routes.rb:1:in `<top (required)>'
+
+
+  Rendered /home/nesooft/.rvm/gems/ruby-2.3.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.1ms)
+  Rendered /home/nesooft/.rvm/gems/ruby-2.3.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /home/nesooft/.rvm/gems/ruby-2.3.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /home/nesooft/.rvm/gems/ruby-2.3.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (23.7ms)
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 18:46:16 +0530
+
+SyntaxError (/home/nesooft/Rahul-Sharma/RubyMine-Project-Git/google-map-api/lib/api/v1/shops.rb:15: syntax error, unexpected keyword_true, expecting ':'
+...titude.to_f <= 90 ? return true : return false
+...                               ^
+/home/nesooft/Rahul-Sharma/RubyMine-Project-Git/google-map-api/lib/api/v1/shops.rb:19: syntax error, unexpected keyword_true, expecting ':'
+...itude.to_f <= 180 ? return true : return false
+...                               ^):
+  lib/api/v1/root.rb:4:in `<class:Root>'
+  lib/api/v1/root.rb:3:in `<module:V1>'
+  lib/api/v1/root.rb:2:in `<module:API>'
+  lib/api/v1/root.rb:1:in `<top (required)>'
+  lib/api/root.rb:4:in `<class:Root>'
+  lib/api/root.rb:2:in `<module:API>'
+  lib/api/root.rb:1:in `<top (required)>'
+  config/routes.rb:2:in `block in <top (required)>'
+  config/routes.rb:1:in `<top (required)>'
+
+
+  Rendered /home/nesooft/.rvm/gems/ruby-2.3.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /home/nesooft/.rvm/gems/ruby-2.3.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /home/nesooft/.rvm/gems/ruby-2.3.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /home/nesooft/.rvm/gems/ruby-2.3.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (14.0ms)
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 18:46:17 +0530
+
+ActionController::RoutingError (No route matches [POST] "/api/v1/shops/create"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.5) lib/rack/sendfile.rb:112:in `call'
+  rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/nesooft/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /home/nesooft/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /home/nesooft/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /home/nesooft/.rvm/gems/ruby-2.3.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.6ms)
+  Rendered /home/nesooft/.rvm/gems/ruby-2.3.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (7.0ms)
+  Rendered /home/nesooft/.rvm/gems/ruby-2.3.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (19.7ms)
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 18:48:03 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 18:48:14 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 18:48:31 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 18:48:37 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 18:48:44 +0530
+  [1m[35mShop Load (1.3ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Sharma Shopping Centre2' AND "shops"."address" = '1Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657150' AND "shops"."longitude" = '72.6298070'
+  [1m[36mShop Load (0.3ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."latitude" = '23.0657150' AND "shops"."longitude" = '72.6298070'[0m
+  [1m[35mShop Load (0.2ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."address" = '1Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340'
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 18:53:32 +0530
+
+NameError (undefined local variable or method `shop' for #<Grape::Endpoint:0x0000000444ccb8>):
+  lib/api/v1/shops.rb:21:in `create'
+  lib/api/v1/shops.rb:58:in `block (2 levels) in <class:Shops>'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (13.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (32.4ms)
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 18:53:37 +0530
+
+NameError (undefined local variable or method `shop' for #<Grape::Endpoint:0x000000042ad218>):
+  lib/api/v1/shops.rb:21:in `create'
+  lib/api/v1/shops.rb:58:in `block (2 levels) in <class:Shops>'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (46.5ms)
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:05:53 +0530
+  [1m[36mShop Load (0.4ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Sharma Shopping Centre' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (56.8ms)[0m  [1mINSERT INTO "shops" ("address", "created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["address", "Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340"], ["created_at", Thu, 12 May 2016 13:35:53 UTC +00:00], ["latitude", "23.0657155"], ["longitude", "72.6298079"], ["name", "Sharma Shopping Centre"], ["updated_at", Thu, 12 May 2016 13:35:53 UTC +00:00]]
+  [1m[35m (8.2ms)[0m  COMMIT
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:06:03 +0530
+  [1m[36mShop Load (0.5ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Sharma Shopping Centre' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "shops" ("address", "created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["address", "Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340"], ["created_at", Thu, 12 May 2016 13:36:03 UTC +00:00], ["latitude", "23.0657155"], ["longitude", "72.6298079"], ["name", "Sharma Shopping Centre"], ["updated_at", Thu, 12 May 2016 13:36:03 UTC +00:00]]
+  [1m[35m (15.2ms)[0m  COMMIT
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:06:32 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:06:37 +0530
+  [1m[36mShop Load (0.4ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Sharma Shopping Centre' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "shops" ("address", "created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["address", "Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340"], ["created_at", Thu, 12 May 2016 13:36:37 UTC +00:00], ["latitude", "23.0657155"], ["longitude", "72.6298079"], ["name", "Sharma Shopping Centre"], ["updated_at", Thu, 12 May 2016 13:36:37 UTC +00:00]]
+  [1m[35m (17.4ms)[0m  COMMIT
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:08:03 +0530
+  [1m[36mShop Load (0.3ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Sharma Shopping Centre' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:19:36 +0530
+  [1m[35mShop Load (0.5ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Lesly Bahringer' AND "shops"."address" = '322 Trevor Point, Schmidt Lock, Ianberg, North Carolina, Lithuania, 84499-7630' AND "shops"."latitude" = '-42.99071205199495' AND "shops"."longitude" = '0.639323284566359'
+  [1m[36mShop Load (0.4ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."latitude" = '-42.99071205199495' AND "shops"."longitude" = '0.639323284566359'[0m
+  [1m[35mShop Load (0.4ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."address" = '322 Trevor Point, Schmidt Lock, Ianberg, North Carolina, Lithuania, 84499-7630'
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "shops" ("address", "created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["address", "322 Trevor Point, Schmidt Lock, Ianberg, North Carolina, Lithuania, 84499-7630"], ["created_at", Thu, 12 May 2016 13:49:36 UTC +00:00], ["latitude", "-42.99071205199495"], ["longitude", "0.639323284566359"], ["name", "Lesly Bahringer"], ["updated_at", Thu, 12 May 2016 13:49:36 UTC +00:00]]
+  [1m[36m (8.1ms)[0m  [1mCOMMIT[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:19:36 +0530
+  [1m[35mShop Load (0.7ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Sharma Shopping Centre' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:19:36 +0530
+  [1m[36mShop Load (0.4ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Mohan Lal' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+  [1m[35mShop Load (0.3ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:19:36 +0530
+  [1m[36mShop Load (0.5ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Mohan Lal' AND "shops"."address" = 'Shahani Para' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+  [1m[35mShop Load (0.4ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:19:36 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:19:36 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:19:36 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:19:36 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:21:26 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:21:26 +0530
+  [1m[36mShop Load (0.5ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Sharma Shopping Centre' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:21:26 +0530
+  [1m[35mShop Load (0.5ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Mohan Lal' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+  [1m[36mShop Load (0.4ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:21:26 +0530
+  [1m[35mShop Load (0.6ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Mohan Lal' AND "shops"."address" = 'Shahani Para' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+  [1m[36mShop Load (0.5ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:21:26 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:21:26 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:21:26 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:21:26 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:21:38 +0530
+  [1m[35mShop Load (0.4ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Fredrick Considine' AND "shops"."address" = '445 Bernhard Crossroad, Lorena Stream, Stefanberg, Washington, Italy, 75440' AND "shops"."latitude" = '25.461094613006907' AND "shops"."longitude" = '58.375391310904405'
+  [1m[36mShop Load (0.3ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."latitude" = '25.461094613006907' AND "shops"."longitude" = '58.375391310904405'[0m
+  [1m[35mShop Load (0.3ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."address" = '445 Bernhard Crossroad, Lorena Stream, Stefanberg, Washington, Italy, 75440'
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "shops" ("address", "created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["address", "445 Bernhard Crossroad, Lorena Stream, Stefanberg, Washington, Italy, 75440"], ["created_at", Thu, 12 May 2016 13:51:38 UTC +00:00], ["latitude", "25.461094613006907"], ["longitude", "58.375391310904405"], ["name", "Fredrick Considine"], ["updated_at", Thu, 12 May 2016 13:51:38 UTC +00:00]]
+  [1m[36m (14.1ms)[0m  [1mCOMMIT[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:21:38 +0530
+  [1m[35mShop Load (0.6ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Sharma Shopping Centre' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:21:38 +0530
+  [1m[36mShop Load (0.5ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Mohan Lal' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+  [1m[35mShop Load (0.4ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:21:38 +0530
+  [1m[36mShop Load (0.5ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Mohan Lal' AND "shops"."address" = 'Shahani Para' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+  [1m[35mShop Load (0.4ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:21:38 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:21:38 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:21:38 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:21:38 +0530
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-12 19:21:58 +0530
+  [1m[36mShop Load (0.6ms)[0m  [1mSELECT "shops".* FROM "shops"[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:28:07 +0530
+  [1m[35mShop Load (0.5ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Brock Connelly Jr.' AND "shops"."address" = '2268 Monique Crossroad, Winston Mountain, Lemkehaven, Indiana, Greenland, 34809' AND "shops"."latitude" = '60.501942606163425' AND "shops"."longitude" = '-16.64074312473781'
+  [1m[36mShop Load (0.4ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."latitude" = '60.501942606163425' AND "shops"."longitude" = '-16.64074312473781'[0m
+  [1m[35mShop Load (0.3ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."address" = '2268 Monique Crossroad, Winston Mountain, Lemkehaven, Indiana, Greenland, 34809'
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "shops" ("address", "created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["address", "2268 Monique Crossroad, Winston Mountain, Lemkehaven, Indiana, Greenland, 34809"], ["created_at", Thu, 12 May 2016 13:58:07 UTC +00:00], ["latitude", "60.501942606163425"], ["longitude", "-16.64074312473781"], ["name", "Brock Connelly Jr."], ["updated_at", Thu, 12 May 2016 13:58:07 UTC +00:00]]
+  [1m[36m (12.1ms)[0m  [1mCOMMIT[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:28:07 +0530
+  [1m[35mShop Load (1.1ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Sharma Shopping Centre' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:28:07 +0530
+  [1m[36mShop Load (0.5ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Mohan Lal' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+  [1m[35mShop Load (0.4ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:28:07 +0530
+  [1m[36mShop Load (0.5ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Mohan Lal' AND "shops"."address" = 'Shahani Para' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+  [1m[35mShop Load (0.4ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:28:07 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:28:07 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:28:07 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:28:07 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:30:30 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:30:30 +0530
+  [1m[36mShop Load (0.5ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Sharma Shopping Centre' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:30:30 +0530
+  [1m[35mShop Load (0.5ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Mohan Lal' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+  [1m[36mShop Load (0.4ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:30:30 +0530
+  [1m[35mShop Load (0.5ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Mohan Lal' AND "shops"."address" = 'Shahani Para' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+  [1m[36mShop Load (0.4ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:30:30 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:30:30 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:30:30 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:30:30 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:30:35 +0530
+  [1m[35mShop Load (0.5ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Floy Gutmann' AND "shops"."address" = '6001 Reilly Turnpike, Barrows Burg, New Prestonview, Rhode Island, Liechtenstein, 88982' AND "shops"."latitude" = '-30.703657611746003' AND "shops"."longitude" = '73.7002411703242'
+  [1m[36mShop Load (0.3ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."latitude" = '-30.703657611746003' AND "shops"."longitude" = '73.7002411703242'[0m
+  [1m[35mShop Load (0.3ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."address" = '6001 Reilly Turnpike, Barrows Burg, New Prestonview, Rhode Island, Liechtenstein, 88982'
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "shops" ("address", "created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["address", "6001 Reilly Turnpike, Barrows Burg, New Prestonview, Rhode Island, Liechtenstein, 88982"], ["created_at", Thu, 12 May 2016 14:00:35 UTC +00:00], ["latitude", "-30.703657611746003"], ["longitude", "73.7002411703242"], ["name", "Floy Gutmann"], ["updated_at", Thu, 12 May 2016 14:00:35 UTC +00:00]]
+  [1m[36m (12.0ms)[0m  [1mCOMMIT[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:30:35 +0530
+  [1m[35mShop Load (0.7ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Sharma Shopping Centre' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:30:35 +0530
+  [1m[36mShop Load (0.4ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Mohan Lal' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+  [1m[35mShop Load (0.3ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:30:35 +0530
+  [1m[36mShop Load (0.4ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Mohan Lal' AND "shops"."address" = 'Shahani Para' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+  [1m[35mShop Load (0.4ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:30:35 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:30:35 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:30:35 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:30:35 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:32:07 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:32:07 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:32:07 +0530
+  [1m[36mShop Load (0.5ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Kris Kuhic' AND "shops"."address" = '3186 Wilhelmine Mount, Jast Village, Monicaside, Vermont, French Polynesia, 37480-2610' AND "shops"."latitude" = '-8.907621940829273' AND "shops"."longitude" = '57.2945324576481'[0m
+  [1m[35mShop Load (0.3ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."latitude" = '-8.907621940829273' AND "shops"."longitude" = '57.2945324576481'
+  [1m[36mShop Load (0.3ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."address" = '3186 Wilhelmine Mount, Jast Village, Monicaside, Vermont, French Polynesia, 37480-2610'[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "shops" ("address", "created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["address", "3186 Wilhelmine Mount, Jast Village, Monicaside, Vermont, French Polynesia, 37480-2610"], ["created_at", Thu, 12 May 2016 14:02:07 UTC +00:00], ["latitude", "-8.907621940829273"], ["longitude", "57.2945324576481"], ["name", "Kris Kuhic"], ["updated_at", Thu, 12 May 2016 14:02:07 UTC +00:00]]
+  [1m[35m (14.7ms)[0m  COMMIT
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:32:08 +0530
+  [1m[36mShop Load (0.6ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Sharma Shopping Centre' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:32:08 +0530
+  [1m[35mShop Load (0.5ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Mohan Lal' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+  [1m[36mShop Load (0.3ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:32:08 +0530
+  [1m[35mShop Load (0.4ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Mohan Lal' AND "shops"."address" = 'Shahani Para' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+  [1m[36mShop Load (0.3ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:32:08 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:32:08 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:32:08 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:32:08 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:32:23 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:32:24 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:32:24 +0530
+  [1m[35mShop Load (0.6ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Susana Lueilwitz' AND "shops"."address" = '272 Bailey Fort, Parker Mews, Albertoport, Minnesota, France, 98452' AND "shops"."latitude" = '-0.5718858560312725' AND "shops"."longitude" = '-50.283086906797706'
+  [1m[36mShop Load (0.3ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."latitude" = '-0.5718858560312725' AND "shops"."longitude" = '-50.283086906797706'[0m
+  [1m[35mShop Load (0.3ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."address" = '272 Bailey Fort, Parker Mews, Albertoport, Minnesota, France, 98452'
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "shops" ("address", "created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["address", "272 Bailey Fort, Parker Mews, Albertoport, Minnesota, France, 98452"], ["created_at", Thu, 12 May 2016 14:02:24 UTC +00:00], ["latitude", "-0.5718858560312725"], ["longitude", "-50.283086906797706"], ["name", "Susana Lueilwitz"], ["updated_at", Thu, 12 May 2016 14:02:24 UTC +00:00]]
+  [1m[36m (17.0ms)[0m  [1mCOMMIT[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:32:24 +0530
+  [1m[35mShop Load (0.6ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Sharma Shopping Centre' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:32:24 +0530
+  [1m[36mShop Load (0.5ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Mohan Lal' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+  [1m[35mShop Load (0.4ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:32:24 +0530
+  [1m[36mShop Load (0.5ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Mohan Lal' AND "shops"."address" = 'Shahani Para' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+  [1m[35mShop Load (0.3ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:32:24 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:32:24 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:32:24 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:32:24 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:33:26 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:33:26 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:33:26 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:33:26 +0530
+  [1m[36mShop Load (0.5ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Sharma Shopping Centre' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:33:26 +0530
+  [1m[35mShop Load (0.4ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Mohan Lal' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+  [1m[36mShop Load (0.3ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:33:26 +0530
+  [1m[35mShop Load (0.5ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Mohan Lal' AND "shops"."address" = 'Shahani Para' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+  [1m[36mShop Load (0.4ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:33:26 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:33:26 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:33:26 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:33:26 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:33:50 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:33:50 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:33:50 +0530
+  [1m[35mShop Load (0.6ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Niko Greenfelder' AND "shops"."address" = '5954 Gislason Heights, Iva Dam, North Sebastianhaven, Washington, Uganda, 78847' AND "shops"."latitude" = '67.11292409075818' AND "shops"."longitude" = '-86.57929980688137'
+  [1m[36mShop Load (0.4ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."latitude" = '67.11292409075818' AND "shops"."longitude" = '-86.57929980688137'[0m
+  [1m[35mShop Load (0.3ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."address" = '5954 Gislason Heights, Iva Dam, North Sebastianhaven, Washington, Uganda, 78847'
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "shops" ("address", "created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["address", "5954 Gislason Heights, Iva Dam, North Sebastianhaven, Washington, Uganda, 78847"], ["created_at", Thu, 12 May 2016 14:03:50 UTC +00:00], ["latitude", "67.11292409075818"], ["longitude", "-86.57929980688137"], ["name", "Niko Greenfelder"], ["updated_at", Thu, 12 May 2016 14:03:50 UTC +00:00]]
+  [1m[36m (17.9ms)[0m  [1mCOMMIT[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:33:50 +0530
+  [1m[35mShop Load (0.6ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Sharma Shopping Centre' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:33:50 +0530
+  [1m[36mShop Load (0.4ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Mohan Lal' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+  [1m[35mShop Load (0.3ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:33:50 +0530
+  [1m[36mShop Load (0.4ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Mohan Lal' AND "shops"."address" = 'Shahani Para' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+  [1m[35mShop Load (0.3ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:33:50 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:33:50 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:33:50 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:33:50 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:34:12 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:34:12 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:34:12 +0530
+  [1m[36mShop Load (0.6ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Jaydon Volkman' AND "shops"."address" = '35479 Darrel Neck, Schmidt Dam, Shawnton, Nebraska, Jordan, 89865' AND "shops"."latitude" = '74.61524284950963' AND "shops"."longitude" = '-54.82472619612716'[0m
+  [1m[35mShop Load (0.4ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."latitude" = '74.61524284950963' AND "shops"."longitude" = '-54.82472619612716'
+  [1m[36mShop Load (0.4ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."address" = '35479 Darrel Neck, Schmidt Dam, Shawnton, Nebraska, Jordan, 89865'[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "shops" ("address", "created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["address", "35479 Darrel Neck, Schmidt Dam, Shawnton, Nebraska, Jordan, 89865"], ["created_at", Thu, 12 May 2016 14:04:12 UTC +00:00], ["latitude", "74.61524284950963"], ["longitude", "-54.82472619612716"], ["name", "Jaydon Volkman"], ["updated_at", Thu, 12 May 2016 14:04:12 UTC +00:00]]
+  [1m[35m (10.0ms)[0m  COMMIT
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:34:12 +0530
+  [1m[36mShop Load (0.5ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Sharma Shopping Centre' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:34:12 +0530
+  [1m[35mShop Load (0.4ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Mohan Lal' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+  [1m[36mShop Load (0.4ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:34:12 +0530
+  [1m[35mShop Load (0.5ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Mohan Lal' AND "shops"."address" = 'Shahani Para' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+  [1m[36mShop Load (0.3ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:34:12 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:34:12 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:34:12 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:34:12 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:37:24 +0530
+  [1m[35mShop Load (0.5ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Sharma Shopping Centre' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:37:24 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:37:25 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:37:25 +0530
+  [1m[36mShop Load (0.5ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Sharma Shopping Centre' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:37:25 +0530
+  [1m[35mShop Load (0.5ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Mohan Lal' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+  [1m[36mShop Load (0.4ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:37:25 +0530
+  [1m[35mShop Load (0.5ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Mohan Lal' AND "shops"."address" = 'Shahani Para' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+  [1m[36mShop Load (0.5ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:37:25 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:37:25 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:37:25 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:37:25 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:37:49 +0530
+  [1m[35mShop Load (0.4ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Sharma Shopping Centre' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:37:49 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:37:50 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:37:50 +0530
+  [1m[36mShop Load (0.5ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Sharma Shopping Centre' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:37:50 +0530
+  [1m[35mShop Load (0.7ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Mohan Lal' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+  [1m[36mShop Load (0.4ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:37:50 +0530
+  [1m[35mShop Load (0.4ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Mohan Lal' AND "shops"."address" = 'Shahani Para' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+  [1m[36mShop Load (0.4ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:37:50 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:37:50 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:37:50 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:37:50 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:38:58 +0530
+  [1m[35mShop Load (0.5ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Sharma Shopping Centre' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:38:58 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:38:59 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:38:59 +0530
+  [1m[36mShop Load (0.5ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Sharma Shopping Centre' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:38:59 +0530
+  [1m[35mShop Load (0.5ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Mohan Lal' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+  [1m[36mShop Load (0.3ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:38:59 +0530
+  [1m[35mShop Load (0.5ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Mohan Lal' AND "shops"."address" = 'Shahani Para' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+  [1m[36mShop Load (0.4ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:38:59 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:38:59 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:38:59 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:38:59 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:39:27 +0530
+  [1m[35mShop Load (0.5ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Sharma Shopping Centre' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:39:27 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:39:28 +0530
+  [1m[36mShop Load (0.4ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Piper Schoen' AND "shops"."address" = '822 Mekhi Plains, Kaylie Ridges, South Brycen, California, Antigua and Barbuda, 65171' AND "shops"."latitude" = '-81.60824432018562' AND "shops"."longitude" = '54.11581862270083'[0m
+  [1m[35mShop Load (0.3ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."latitude" = '-81.60824432018562' AND "shops"."longitude" = '54.11581862270083'
+  [1m[36mShop Load (0.3ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."address" = '822 Mekhi Plains, Kaylie Ridges, South Brycen, California, Antigua and Barbuda, 65171'[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "shops" ("address", "created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["address", "822 Mekhi Plains, Kaylie Ridges, South Brycen, California, Antigua and Barbuda, 65171"], ["created_at", Thu, 12 May 2016 14:09:28 UTC +00:00], ["latitude", "-81.60824432018562"], ["longitude", "54.11581862270083"], ["name", "Piper Schoen"], ["updated_at", Thu, 12 May 2016 14:09:28 UTC +00:00]]
+  [1m[35m (12.7ms)[0m  COMMIT
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:39:28 +0530
+  [1m[36mShop Load (0.5ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Sharma Shopping Centre' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:39:28 +0530
+  [1m[35mShop Load (0.4ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Mohan Lal' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+  [1m[36mShop Load (0.3ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:39:28 +0530
+  [1m[35mShop Load (0.4ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Mohan Lal' AND "shops"."address" = 'Shahani Para' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+  [1m[36mShop Load (0.2ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:39:28 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:39:28 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:39:28 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:39:28 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:40:00 +0530
+  [1m[35mShop Load (0.6ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Sharma Shopping Centre' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:40:00 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:40:01 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:40:01 +0530
+  [1m[36mShop Load (0.4ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Sharma Shopping Centre' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:40:01 +0530
+  [1m[35mShop Load (0.5ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Mohan Lal' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+  [1m[36mShop Load (0.4ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:40:01 +0530
+  [1m[35mShop Load (0.4ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Mohan Lal' AND "shops"."address" = 'Shahani Para' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+  [1m[36mShop Load (0.2ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:40:01 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:40:01 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:40:01 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:40:01 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:40:14 +0530
+  [1m[35mShop Load (0.5ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Sharma Shopping Centre' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:40:14 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:40:14 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:40:14 +0530
+  [1m[36mShop Load (0.5ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Sharma Shopping Centre' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:40:14 +0530
+  [1m[35mShop Load (0.5ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Mohan Lal' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+  [1m[36mShop Load (0.5ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:40:14 +0530
+  [1m[35mShop Load (0.5ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Mohan Lal' AND "shops"."address" = 'Shahani Para' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+  [1m[36mShop Load (0.4ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:40:14 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:40:14 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:40:14 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:40:15 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:43:02 +0530
+  [1m[35mShop Load (0.6ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Sharma Shopping Centre' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:44:15 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:44:16 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:44:16 +0530
+  [1m[36mShop Load (0.5ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Sharma Shopping Centre' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:44:16 +0530
+  [1m[35mShop Load (0.4ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Mohan Lal' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+  [1m[36mShop Load (0.4ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:44:16 +0530
+  [1m[35mShop Load (0.8ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Mohan Lal' AND "shops"."address" = 'Shahani Para' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+  [1m[36mShop Load (0.5ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:44:16 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:44:16 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:44:16 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:44:16 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:44:20 +0530
+  [1m[35mShop Load (0.5ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Sharma Shopping Centre' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:44:20 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:44:20 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:44:20 +0530
+  [1m[36mShop Load (0.6ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Sharma Shopping Centre' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:44:20 +0530
+  [1m[35mShop Load (0.5ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Mohan Lal' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+  [1m[36mShop Load (0.4ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:44:20 +0530
+  [1m[35mShop Load (0.5ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Mohan Lal' AND "shops"."address" = 'Shahani Para' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+  [1m[36mShop Load (0.4ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:44:21 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:44:21 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:44:21 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:44:21 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:44:40 +0530
+  [1m[35mShop Load (0.5ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Sharma Shopping Centre' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:44:40 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:44:41 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:44:41 +0530
+  [1m[36mShop Load (0.5ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Sharma Shopping Centre' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:44:41 +0530
+  [1m[35mShop Load (0.5ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Mohan Lal' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+  [1m[36mShop Load (0.4ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:44:41 +0530
+  [1m[35mShop Load (0.7ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Mohan Lal' AND "shops"."address" = 'Shahani Para' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+  [1m[36mShop Load (0.4ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:44:41 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:44:41 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:44:41 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:44:41 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:45:14 +0530
+  [1m[35mShop Load (0.5ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Sharma Shopping Centre' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:45:14 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:45:14 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:45:15 +0530
+  [1m[36mShop Load (0.5ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Sharma Shopping Centre' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:45:15 +0530
+  [1m[35mShop Load (0.5ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Mohan Lal' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+  [1m[36mShop Load (0.4ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:45:15 +0530
+  [1m[35mShop Load (0.5ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Mohan Lal' AND "shops"."address" = 'Shahani Para' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+  [1m[36mShop Load (0.8ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:45:15 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:45:15 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:45:15 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:45:15 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:47:27 +0530
+  [1m[35mShop Load (0.5ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Sharma Shopping Centre' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:47:27 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:47:28 +0530
+  [1m[36mShop Load (0.5ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Sabina Rolfson' AND "shops"."address" = '336 Howell Wall, Watsica Summit, Wyattchester, Kansas, Moldova, 91639' AND "shops"."latitude" = '87.9624938654039' AND "shops"."longitude" = '-36.42106652599642'[0m
+  [1m[35mShop Load (0.4ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."latitude" = '87.9624938654039' AND "shops"."longitude" = '-36.42106652599642'
+  [1m[36mShop Load (0.3ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."address" = '336 Howell Wall, Watsica Summit, Wyattchester, Kansas, Moldova, 91639'[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "shops" ("address", "created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["address", "336 Howell Wall, Watsica Summit, Wyattchester, Kansas, Moldova, 91639"], ["created_at", Thu, 12 May 2016 14:17:28 UTC +00:00], ["latitude", "87.9624938654039"], ["longitude", "-36.42106652599642"], ["name", "Sabina Rolfson"], ["updated_at", Thu, 12 May 2016 14:17:28 UTC +00:00]]
+  [1m[35m (11.5ms)[0m  COMMIT
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:47:28 +0530
+  [1m[36mShop Load (0.6ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Sharma Shopping Centre' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:47:28 +0530
+  [1m[35mShop Load (0.5ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Mohan Lal' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+  [1m[36mShop Load (0.4ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:47:28 +0530
+  [1m[35mShop Load (0.9ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Mohan Lal' AND "shops"."address" = 'Shahani Para' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+  [1m[36mShop Load (0.3ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:47:28 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:47:28 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:47:28 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:47:28 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:59:49 +0530
+  [1m[35mShop Load (0.6ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Sharma Shopping Centre' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:59:49 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:59:50 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:59:50 +0530
+  [1m[36mShop Load (0.5ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Sharma Shopping Centre' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:59:50 +0530
+  [1m[35mShop Load (0.5ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Mohan Lal' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+  [1m[36mShop Load (0.4ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:59:50 +0530
+  [1m[35mShop Load (0.4ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Mohan Lal' AND "shops"."address" = 'Shahani Para' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+  [1m[36mShop Load (0.3ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:59:50 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:59:50 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:59:50 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 19:59:50 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 20:00:21 +0530
+  [1m[35mShop Load (0.5ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Sharma Shopping Centre' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 20:00:21 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 20:00:22 +0530
+  [1m[36mShop Load (0.6ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Wilhelm Windler' AND "shops"."address" = '8384 Marcelina Plaza, Garfield Vista, Osbaldostad, Washington, Costa Rica, 95744' AND "shops"."latitude" = '35.755189109201766' AND "shops"."longitude" = '-53.4698128804241'[0m
+  [1m[35mShop Load (0.2ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."latitude" = '35.755189109201766' AND "shops"."longitude" = '-53.4698128804241'
+  [1m[36mShop Load (0.4ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."address" = '8384 Marcelina Plaza, Garfield Vista, Osbaldostad, Washington, Costa Rica, 95744'[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "shops" ("address", "created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["address", "8384 Marcelina Plaza, Garfield Vista, Osbaldostad, Washington, Costa Rica, 95744"], ["created_at", Thu, 12 May 2016 14:30:22 UTC +00:00], ["latitude", "35.755189109201766"], ["longitude", "-53.4698128804241"], ["name", "Wilhelm Windler"], ["updated_at", Thu, 12 May 2016 14:30:22 UTC +00:00]]
+  [1m[35m (9.7ms)[0m  COMMIT
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 20:00:22 +0530
+  [1m[36mShop Load (0.6ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Sharma Shopping Centre' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 20:00:22 +0530
+  [1m[35mShop Load (0.5ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Mohan Lal' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+  [1m[36mShop Load (0.4ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 20:00:22 +0530
+  [1m[35mShop Load (0.5ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Mohan Lal' AND "shops"."address" = 'Shahani Para' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+  [1m[36mShop Load (0.4ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 20:00:22 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 20:00:22 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 20:00:22 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 20:00:22 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 20:02:38 +0530
+  [1m[35mShop Load (0.4ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Sharma Shopping Centre' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 20:02:38 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 20:02:38 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 20:02:38 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 20:02:38 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 20:02:38 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 20:02:38 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 20:02:38 +0530
+  [1m[36mShop Load (0.4ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Marge Dickinson' AND "shops"."address" = '1268 Benjamin Trace, Green Streets, Bernieview, Delaware, Colombia, 42326' AND "shops"."latitude" = '57.596359249045804' AND "shops"."longitude" = '-72.36922274451268'[0m
+  [1m[35mShop Load (0.4ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."latitude" = '57.596359249045804' AND "shops"."longitude" = '-72.36922274451268'
+  [1m[36mShop Load (0.3ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."address" = '1268 Benjamin Trace, Green Streets, Bernieview, Delaware, Colombia, 42326'[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "shops" ("address", "created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["address", "1268 Benjamin Trace, Green Streets, Bernieview, Delaware, Colombia, 42326"], ["created_at", Thu, 12 May 2016 14:32:38 UTC +00:00], ["latitude", "57.596359249045804"], ["longitude", "-72.36922274451268"], ["name", "Marge Dickinson"], ["updated_at", Thu, 12 May 2016 14:32:38 UTC +00:00]]
+  [1m[35m (18.1ms)[0m  COMMIT
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 20:02:38 +0530
+  [1m[36mShop Load (0.5ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Sharma Shopping Centre' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 20:02:38 +0530
+  [1m[35mShop Load (0.5ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Mohan Lal' AND "shops"."address" = 'Bhargav Rd, Jay Ambe Society, Saijpur Bogha, Ahmedabad, Gujarat 382340' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+  [1m[36mShop Load (0.4ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 20:02:39 +0530
+  [1m[35mShop Load (0.6ms)[0m  SELECT "shops".* FROM "shops" WHERE "shops"."name" = 'Mohan Lal' AND "shops"."address" = 'Shahani Para' AND "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'
+  [1m[36mShop Load (0.4ms)[0m  [1mSELECT "shops".* FROM "shops" WHERE "shops"."latitude" = '23.0657155' AND "shops"."longitude" = '72.6298079'[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 20:02:39 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 20:02:39 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 20:02:39 +0530
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-12 20:02:39 +0530

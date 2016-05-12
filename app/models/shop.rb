@@ -1,7 +1,7 @@
 class Shop < ActiveRecord::Base
   def check_availability(name, address, latitude, longitude)
     begin
-      if Shop.where(name: name, address: address, latitude: latitude, longitude: longitude).present?
+      if Shop.where(name: name, address: address, latitude: latitude, longitude: longitude).present? || Shop.where(latitude: latitude, longitude: longitude).present? || Shop.where(address: address).present?
         return false
       end
     rescue DataBaseException => e
