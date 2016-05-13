@@ -2,13 +2,12 @@ require 'spec_helper'
 require 'faker'
 
 # Shop create unit testing.
-describe 'The shop' do
-  url = 'shops/create'
+describe 'the "Shop"' do
+  let(:api_key) { '1e26686d806d82144a71ea9a99d1b3169adaad917' }
 
-  describe 'create api' do
-    describe 'the api key' do
+  RSpec.shared_examples "post api key" do
+    describe 'the "Api" key' do
       context 'when entered the valid api key' do
-        let(:api_key) { '1e26686d806d82144a71ea9a99d1b3169adaad917' }
 
         it 'successfully accessed api' do
           data = {
@@ -36,10 +35,34 @@ describe 'The shop' do
         end
       end
     end
+  end
 
-    describe 'the shop has empty information' do
-      let(:api_key) { '1e26686d806d82144a71ea9a99d1b3169adaad917' }
+  RSpec.shared_examples "get api key" do
+    describe 'the "Api key"' do
+      context 'when entered the valid api key' do
 
+        it 'successfully accessed api' do
+          response = GetAPIResponse(url, api_key)
+          expect(response['status']).to eq 0
+        end
+      end
+      context 'when entered the invalid api key' do
+        let(:api_key) { '1e26686d806d82144a71ea9a99d1b3169adaad123' }
+
+        it 'unsuccessful accessed api' do
+          response = GetAPIResponse(url, api_key)
+          expect(response['error']['code'].to_i).to eq -101
+        end
+      end
+    end
+  end
+
+  describe 'create "Api"' do
+    let(:url) { 'shops/create' }
+
+    include_examples "post api key"
+
+    describe 'the "Shop" has empty information' do
       context 'when entered all empty information' do
         it 'the shop has blank information' do
           data = {
@@ -106,9 +129,7 @@ describe 'The shop' do
       end
     end
 
-    describe 'entered shop information' do
-      let(:api_key) { '1e26686d806d82144a71ea9a99d1b3169adaad917' }
-
+    describe 'entered "Shop" information' do
       context 'when the shop has valid information' do
         it 'shop created successfully' do
           data = {
@@ -123,7 +144,7 @@ describe 'The shop' do
       end
 
       context 'and the shop has not valid information' do
-        describe 'the shop has existing information then' do
+        describe 'the "Shop" has existing information then' do
           it 'the shop is not created successfully' do
             data = {
                 name: "Sharma Shopping Centre",
@@ -136,7 +157,7 @@ describe 'The shop' do
           end
         end
 
-        describe 'the shop has existing address then' do
+        describe 'the "Shop" has existing address then' do
           it 'the shop is not created successfully' do
             data = {
                 name: "Mohan Lal",
@@ -149,7 +170,7 @@ describe 'The shop' do
           end
         end
 
-        describe 'the shop has existing latitude and longitude then' do
+        describe 'the "Shop" has existing latitude and longitude then' do
           it 'the shop is not created successfully' do
             data = {
                 name: "Mohan Lal",
@@ -162,7 +183,7 @@ describe 'The shop' do
           end
         end
 
-        describe 'the sop has out of range latitude' do
+        describe 'the "Shop" has out of range latitude' do
           context 'when the shop has latitude less than -90' do
             it 'the shop is not created successfully' do
               data = {
@@ -190,7 +211,7 @@ describe 'The shop' do
           end
         end
 
-        describe 'the sop has out of range longitude' do
+        describe 'the "Shop" has out of range longitude' do
           context 'when the shop has longitude less than -180' do
             it 'the shop is not created successfully' do
               data = {
@@ -217,6 +238,19 @@ describe 'The shop' do
             end
           end
         end
+      end
+    end
+  end
+
+  describe 'get all "Shop Detail" api' do
+    let(:url) { 'shops/get_all_details' }
+
+    include_examples "get api key"
+
+    describe 'get "Shop" information' do
+      it 'successfully get shop information' do
+        response = GetAPIResponse(url, api_key)
+        expect(response['status']).to eq 0
       end
     end
   end
