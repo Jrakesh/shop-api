@@ -3301,3 +3301,926 @@ Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-13 14:16:42
 
 Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-13 14:16:48 +0530
   [1m[35mShop Load (0.4ms)[0m  SELECT "shops".* FROM "shops"
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-13 14:18:59 +0530
+  [1m[36mShop Load (0.4ms)[0m  [1mSELECT "shops".* FROM "shops"[0m
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-13 14:29:25 +0530
+  [1m[35mShop Load (0.3ms)[0m  SELECT "shops".* FROM "shops"
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-13 14:29:28 +0530
+  [1m[36mShop Load (0.4ms)[0m  [1mSELECT "shops".* FROM "shops"[0m
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-13 14:29:37 +0530
+  [1m[35mShop Load (0.4ms)[0m  SELECT "shops".* FROM "shops"
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to DeviseCreateUsers (20160513090905)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (84.1ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "first_name" character varying(255) DEFAULT '' NOT NULL, "last_name" character varying(255) DEFAULT '' NOT NULL, "sex" character varying(255) DEFAULT '' NOT NULL, "date_of_birth" date NOT NULL, "email" character varying(255) DEFAULT '' NOT NULL, "encrypted_password" character varying(255) DEFAULT '' NOT NULL, "reset_password_token" character varying(255), "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (30.2ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (28.1ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (10.7ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160513090905"]]
+  [1m[36m (11.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateAuthenticationTokens (20160513102648)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (53.5ms)[0m  [1mCREATE TABLE "authentication_tokens" ("id" serial primary key, "authentication_token" character varying(255), "user_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (55.1ms)[0m  CREATE INDEX "index_authentication_tokens_on_user_id" ON "authentication_tokens" ("user_id")
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20160513102648"]]
+  [1m[35m (17.8ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-13 16:05:03 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+NoMethodError (undefined method `authenticate_token_check' for #<AuthenticationToken:0x0000000446cab8>):
+  lib/api/v1/api_base.rb:11:in `authenticate_user'
+  lib/api/v1/shops.rb:57:in `block (2 levels) in <class:Shops>'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (19.2ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (65.5ms)
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-13 16:15:31 +0530
+  [1m[35mAuthenticationToken Load (1.2ms)[0m  SELECT "authentication_tokens".* FROM "authentication_tokens" WHERE "authentication_tokens"."authentication_token" = '12345' LIMIT 1
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-13 16:15:55 +0530
+  [1m[36mAuthenticationToken Load (0.5ms)[0m  [1mSELECT "authentication_tokens".* FROM "authentication_tokens" WHERE "authentication_tokens"."authentication_token" = '12345' LIMIT 1[0m
+
+
+Started POST "/api/v1/shops/create" for 127.0.0.1 at 2016-05-13 16:17:55 +0530
+  [1m[35mAuthenticationToken Load (0.4ms)[0m  SELECT "authentication_tokens".* FROM "authentication_tokens" WHERE "authentication_tokens"."authentication_token" = '12345' LIMIT 1
+
+
+Started POST "/api/v1/services_without_token/create_user" for 127.0.0.1 at 2016-05-13 16:23:54 +0530
+
+ActionController::RoutingError (No route matches [POST] "/api/v1/services_without_token/create_user"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.5) lib/rack/sendfile.rb:112:in `call'
+  rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (28.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (97.4ms)
+
+
+Started POST "/api/v1/services_without_token/create_user" for 127.0.0.1 at 2016-05-13 16:24:22 +0530
+
+NoMethodError (undefined method `is_latitude_range' for #<Grape::Endpoint:0x007f790c32a050>):
+  lib/api/v1/services_without_token.rb:22:in `create_user'
+  lib/api/v1/services_without_token.rb:41:in `block (2 levels) in <class:ServicesWithoutToken>'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (14.3ms)
+
+
+Started POST "/api/v1/services_without_token/create_user" for 127.0.0.1 at 2016-05-13 16:24:51 +0530
+
+
+Started POST "/api/v1/services_without_token/create_user" for 127.0.0.1 at 2016-05-13 16:24:57 +0530
+
+
+Started POST "/api/v1/services_without_token/signup" for 127.0.0.1 at 2016-05-13 16:37:08 +0530
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'rahul.sharma@gmail.com' LIMIT 1[0m
+
+
+Started POST "/api/v1/services_without_token/signup" for 127.0.0.1 at 2016-05-13 16:37:13 +0530
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'rahul.sharma@gmail.com' LIMIT 1
+
+
+Started POST "/api/v1/services_without_token/signup" for 127.0.0.1 at 2016-05-13 16:37:22 +0530
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'rahul.sharma@gmail.com' LIMIT 1[0m
+
+
+Started POST "/api/v1/services_without_token/signup" for 127.0.0.1 at 2016-05-13 16:47:23 +0530
+
+NameError (undefined local variable or method `user' for #<Grape::Endpoint:0x007f790c45f308>):
+  lib/api/v1/services_without_token.rb:26:in `signup'
+  lib/api/v1/services_without_token.rb:51:in `block (2 levels) in <class:ServicesWithoutToken>'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.5ms)
+
+
+Started POST "/api/v1/services_without_token/signup" for 127.0.0.1 at 2016-05-13 16:48:04 +0530
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'rahul.sharma@gmail.com' LIMIT 1
+
+
+Started POST "/api/v1/services_without_token/signup" for 127.0.0.1 at 2016-05-13 16:49:12 +0530
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'rahul.sharma@gmail.com' LIMIT 1[0m
+
+
+Started POST "/api/v1/services_without_token/signup" for 127.0.0.1 at 2016-05-13 16:49:45 +0530
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'rahul.sharma@gmail.com' LIMIT 1
+
+
+Started POST "/api/v1/services_without_token/signup" for 127.0.0.1 at 2016-05-13 16:49:51 +0530
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'rahul.sharma@gmail.com' LIMIT 1[0m
+
+
+Started POST "/api/v1/services_without_token/signup" for 127.0.0.1 at 2016-05-13 16:49:56 +0530
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'rahul.sharma@gmail.com' LIMIT 1
+
+
+Started POST "/api/v1/services_without_token/signup" for 127.0.0.1 at 2016-05-13 16:58:59 +0530
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'rahul.sharma@gmail.com' LIMIT 1[0m
+
+
+Started POST "/api/v1/services_without_token/signup" for 127.0.0.1 at 2016-05-13 16:59:06 +0530
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'rahul.sharma@gmail.com' LIMIT 1
+
+
+Started POST "/api/v1/services_without_token/signup" for 127.0.0.1 at 2016-05-13 16:59:10 +0530
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'rahul.sharma@gmail.com' LIMIT 1[0m
+
+ArgumentError (invalid date):
+  lib/api/v1/services_without_token.rb:21:in `parse'
+  lib/api/v1/services_without_token.rb:21:in `is_valid_date'
+  lib/api/v1/services_without_token.rb:39:in `signup'
+  lib/api/v1/services_without_token.rb:58:in `block (2 levels) in <class:ServicesWithoutToken>'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (14.8ms)
+
+
+Started POST "/api/v1/services_without_token/signup" for 127.0.0.1 at 2016-05-13 17:00:37 +0530
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'rahul.sharma@gmail.com' LIMIT 1
+
+
+Started POST "/api/v1/services_without_token/signup" for 127.0.0.1 at 2016-05-13 17:00:46 +0530
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'rahul.sharma@gmail.com' LIMIT 1[0m
+
+
+Started POST "/api/v1/services_without_token/signup" for 127.0.0.1 at 2016-05-13 17:01:16 +0530
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'rahul.sharma@gmail.com' LIMIT 1
+
+
+Started POST "/api/v1/services_without_token/signup" for 127.0.0.1 at 2016-05-13 17:01:24 +0530
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'rahul.sharma@gmail.com' LIMIT 1[0m
+
+
+Started POST "/api/v1/services_without_token/signup" for 127.0.0.1 at 2016-05-13 17:01:51 +0530
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'rahul.sharma@gmail.com' LIMIT 1
+
+
+Started POST "/api/v1/services_without_token/signup" for 127.0.0.1 at 2016-05-13 17:02:30 +0530
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'rahul.sharma@gmail.com' LIMIT 1[0m
+
+
+Started POST "/api/v1/services_without_token/signup" for 127.0.0.1 at 2016-05-13 17:06:46 +0530
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'rahul.sharma@gmail.com' LIMIT 1
+
+NameError (undefined local variable or method `date_string' for #<Grape::Endpoint:0x007f790c087aa0>):
+  lib/api/v1/services_without_token.rb:21:in `is_valid_date'
+  lib/api/v1/services_without_token.rb:40:in `signup'
+  lib/api/v1/services_without_token.rb:59:in `block (2 levels) in <class:ServicesWithoutToken>'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.1ms)
+
+
+Started POST "/api/v1/services_without_token/signup" for 127.0.0.1 at 2016-05-13 17:07:52 +0530
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'rahul.sharma@gmail.com' LIMIT 1[0m
+
+
+Started POST "/api/v1/services_without_token/signup" for 127.0.0.1 at 2016-05-13 17:08:45 +0530
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'rahul.sharma@gmail.com' LIMIT 1
+
+
+Started POST "/api/v1/services_without_token/signup" for 127.0.0.1 at 2016-05-13 17:09:24 +0530
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'rahul.sharma@gmail.com' LIMIT 1[0m
+
+
+Started POST "/api/v1/services_without_token/signup" for 127.0.0.1 at 2016-05-13 17:09:51 +0530
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'rahul.sharma@gmail.com' LIMIT 1
+
+
+Started POST "/api/v1/services_without_token/signup" for 127.0.0.1 at 2016-05-13 17:10:00 +0530
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'rahul.sharma@gmail.com' LIMIT 1[0m
+
+
+Started POST "/api/v1/services_without_token/signup" for 127.0.0.1 at 2016-05-13 17:10:09 +0530
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'rahul.sharma@gmail.com' LIMIT 1
+
+
+Started POST "/api/v1/services_without_token/signup" for 127.0.0.1 at 2016-05-13 17:10:15 +0530
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'rahul.sharma@gmail.com' LIMIT 1[0m
+
+
+Started POST "/api/v1/services_without_token/signup" for 127.0.0.1 at 2016-05-13 17:10:24 +0530
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'rahul.sharma@gmail.com' LIMIT 1
+
+
+Started POST "/api/v1/services_without_token/signup" for 127.0.0.1 at 2016-05-13 17:20:04 +0530
+
+SyntaxError (/home/nesooft/Rahul-Sharma/RubyMine-Project-Git/google-map-api/lib/api/v1/services_without_token.rb:28: syntax error, unexpected tSTRING_BEG, expecting ':'
+          (sex == 'M') || (sex == 'male') ? return 'M' : return 'F'
+                                                    ^
+/home/nesooft/Rahul-Sharma/RubyMine-Project-Git/google-map-api/lib/api/v1/services_without_token.rb:28: syntax error, unexpected ':', expecting keyword_end
+          (sex == 'M') || (sex == 'male') ? return 'M' : return 'F'
+                                                        ^):
+  lib/api/v1/root.rb:5:in `<class:Root>'
+  lib/api/v1/root.rb:3:in `<module:V1>'
+  lib/api/v1/root.rb:2:in `<module:API>'
+  lib/api/v1/root.rb:1:in `<top (required)>'
+  lib/api/root.rb:4:in `<class:Root>'
+  lib/api/root.rb:2:in `<module:API>'
+  lib/api/root.rb:1:in `<top (required)>'
+  config/routes.rb:3:in `block in <top (required)>'
+  config/routes.rb:1:in `<top (required)>'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.2ms)
+
+
+Started POST "/api/v1/services_without_token/signup" for 127.0.0.1 at 2016-05-13 17:20:57 +0530
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'rahul.sharma@gmail.com' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'rahul.sharma@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (59.3ms)[0m  INSERT INTO "users" ("created_at", "date_of_birth", "email", "encrypted_password", "first_name", "last_name", "sex", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["created_at", Fri, 13 May 2016 11:50:57 UTC +00:00], ["date_of_birth", Wed, 29 Feb 2012], ["email", "rahul.sharma@gmail.com"], ["encrypted_password", "$2a$10$4NwdH7HgD27dSxvuRXrxTu/nOs1cJE3Lx1kOkG/Z.ryqzXLJNEh0u"], ["first_name", "Rahul"], ["last_name", "Sharma"], ["sex", "M"], ["updated_at", Fri, 13 May 2016 11:50:57 UTC +00:00]]
+  [1m[36m (3.7ms)[0m  [1mCOMMIT[0m
+
+
+Started POST "/api/v1/services_without_token/signup" for 127.0.0.1 at 2016-05-13 17:21:06 +0530
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'rahul.sharma@gmail.com' LIMIT 1
+
+
+Started POST "/api/v1/services_without_token/signup" for 127.0.0.1 at 2016-05-13 17:21:18 +0530
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'rahul.sharma@gmail.com' LIMIT 1[0m
+
+
+Started POST "/api/v1/services_without_token/signup" for 127.0.0.1 at 2016-05-13 17:22:14 +0530
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'rahul.sharma@gmail.com' LIMIT 1
+
+
+Started POST "/api/v1/services_without_token/login" for 127.0.0.1 at 2016-05-13 17:31:48 +0530
+
+NameError (undefined local variable or method `email' for #<Grape::Endpoint:0x007f790c554358>):
+  lib/api/v1/services_without_token.rb:66:in `login'
+  lib/api/v1/services_without_token.rb:91:in `block (2 levels) in <class:ServicesWithoutToken>'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (14.3ms)
+
+
+Started POST "/api/v1/services_without_token/login" for 127.0.0.1 at 2016-05-13 17:32:24 +0530
+  [1m[36mUser Load (1.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'rahul.sharma@gmail.com' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'rahul.sharma@gmail.com' LIMIT 1
+
+
+Started POST "/api/v1/services_without_token/login" for 127.0.0.1 at 2016-05-13 17:32:34 +0530
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = '1rahul.sharma@gmail.com' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = '1rahul.sharma@gmail.com' LIMIT 1
+
+
+Started POST "/api/v1/services_without_token/login" for 127.0.0.1 at 2016-05-13 17:33:48 +0530
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'rahul.sharma@gmail.com' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'rahul.sharma@gmail.com' LIMIT 1
+
+
+Started POST "/api/v1/services_without_token/login" for 127.0.0.1 at 2016-05-13 17:33:56 +0530
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = '1rahul.sharma@gmail.com' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = '1rahul.sharma@gmail.com' LIMIT 1
+
+
+Started POST "/api/v1/services_without_token/login" for 127.0.0.1 at 2016-05-13 17:34:42 +0530
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = '1rahul.sharma@gmail.com' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = '1rahul.sharma@gmail.com' LIMIT 1
+
+
+Started POST "/api/v1/services_without_token/login" for 127.0.0.1 at 2016-05-13 17:34:50 +0530
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'rahul.sharma@gmail.com' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'rahul.sharma@gmail.com' LIMIT 1
+
+
+Started POST "/api/v1/services_without_token/login" for 127.0.0.1 at 2016-05-13 17:35:20 +0530
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'rahul.sharma@gmail.com' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'rahul.sharma@gmail.com' LIMIT 1
+
+
+Started POST "/api/v1/services_without_token/login" for 127.0.0.1 at 2016-05-13 17:36:58 +0530
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'rahul.sharma@gmail.com' LIMIT 1[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'rahul.sharma@gmail.com' LIMIT 1
+
+
+Started POST "/api/v1/services_without_token/login" for 127.0.0.1 at 2016-05-13 17:37:30 +0530
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'rahul.sharma@gmail.com' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'rahul.sharma@gmail.com' LIMIT 1
+
+
+Started POST "/api/v1/services_without_token/login" for 127.0.0.1 at 2016-05-13 17:37:33 +0530
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'rahul.sharma@gmail.com' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'rahul.sharma@gmail.com' LIMIT 1
+
+
+Started POST "/api/v1/services_without_token/login" for 127.0.0.1 at 2016-05-13 17:37:56 +0530
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = '1rahul.sharma@gmail.com' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = '1rahul.sharma@gmail.com' LIMIT 1
+
+
+Started POST "/api/v1/services_without_token/login" for 127.0.0.1 at 2016-05-13 17:38:01 +0530
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'rahul.sharma@gmail.com' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'rahul.sharma@gmail.com' LIMIT 1
+
+
+Started POST "/api/v1/services_without_token/login" for 127.0.0.1 at 2016-05-13 17:38:07 +0530
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'rahul.sharma@gmail.com' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'rahul.sharma@gmail.com' LIMIT 1
+
+
+Started POST "/api/v1/services_without_token/login" for 127.0.0.1 at 2016-05-13 17:38:15 +0530
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'rahul.sharma@gmail.com' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'rahul.sharma@gmail.com' LIMIT 1
+
+
+Started POST "/api/v1/services_without_token/login" for 127.0.0.1 at 2016-05-13 17:43:41 +0530
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'rahul.sharma@gmail.com' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'rahul.sharma@gmail.com' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'rahul.sharma@gmail.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "authentication_tokens" ("authentication_token", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["authentication_token", "V5VZ3p1qExGRAA3Ly3oS"], ["created_at", Fri, 13 May 2016 12:13:42 UTC +00:00], ["updated_at", Fri, 13 May 2016 12:13:42 UTC +00:00], ["user_id", 1]]
+  [1m[35m (8.5ms)[0m  COMMIT
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-13 17:44:01 +0530
+  [1m[36mAuthenticationToken Load (0.4ms)[0m  [1mSELECT "authentication_tokens".* FROM "authentication_tokens" WHERE "authentication_tokens"."authentication_token" = 'V5VZ3p1qExGRAA3Ly3oS' LIMIT 1[0m
+  [1m[35mShop Load (0.6ms)[0m  SELECT "shops".* FROM "shops"
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-13 18:29:04 +0530
+  [1m[36mAuthenticationToken Load (0.4ms)[0m  [1mSELECT "authentication_tokens".* FROM "authentication_tokens" WHERE "authentication_tokens"."authentication_token" = 'V5VZ3p1qExGRAA3Ly3oS' LIMIT 1[0m
+  [1m[35mShop Load (0.3ms)[0m  SELECT "shops".* FROM "shops"
+
+
+Started POST "/api/v1/services_without_token/signup" for 127.0.0.1 at 2016-05-13 18:47:56 +0530
+
+
+Started POST "/api/v1/users/edit" for 127.0.0.1 at 2016-05-13 18:48:39 +0530
+
+ActionController::RoutingError (No route matches [POST] "/api/v1/users/edit"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.5) lib/rack/sendfile.rb:112:in `call'
+  rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (21.3ms)
+
+
+Started POST "/api/v1/users/edit" for 127.0.0.1 at 2016-05-13 18:50:06 +0530
+  [1m[36mAuthenticationToken Load (0.8ms)[0m  [1mSELECT "authentication_tokens".* FROM "authentication_tokens" WHERE "authentication_tokens"."authentication_token" = 'V5VZ3p1qExGRAA3Ly3oS' ORDER BY "authentication_tokens"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (18.4ms)[0m  ROLLBACK
+
+
+Started POST "/api/v1/users/edit" for 127.0.0.1 at 2016-05-13 18:50:36 +0530
+  [1m[36mAuthenticationToken Load (0.3ms)[0m  [1mSELECT "authentication_tokens".* FROM "authentication_tokens" WHERE "authentication_tokens"."authentication_token" = 'V5VZ3p1qExGRAA3Ly3oS' ORDER BY "authentication_tokens"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (10.9ms)[0m  UPDATE "users" SET "date_of_birth" = $1, "updated_at" = $2 WHERE "users"."id" = 1  [["date_of_birth", Wed, 13 Jan 2010], ["updated_at", Fri, 13 May 2016 13:20:37 UTC +00:00]]
+  [1m[36m (6.6ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/api/v1/users/is_logged_in" for 127.0.0.1 at 2016-05-13 18:55:09 +0530
+
+
+Started GET "/api/v1/users/get_details" for 127.0.0.1 at 2016-05-13 19:03:21 +0530
+  [1m[35mAuthenticationToken Load (0.4ms)[0m  SELECT "authentication_tokens".* FROM "authentication_tokens" WHERE "authentication_tokens"."authentication_token" IS NULL LIMIT 1
+
+
+Started GET "/api/v1/users/logout" for 127.0.0.1 at 2016-05-13 19:03:38 +0530
+  [1m[36mAuthenticationToken Load (0.5ms)[0m  [1mSELECT "authentication_tokens".* FROM "authentication_tokens" WHERE "authentication_tokens"."authentication_token" IS NULL LIMIT 1[0m
+
+
+Started POST "/api/v1/services_without_token/login" for 127.0.0.1 at 2016-05-13 19:03:42 +0530
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'rahul.sharma@gmail.com' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'rahul.sharma@gmail.com' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'rahul.sharma@gmail.com' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "authentication_tokens" ("authentication_token", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["authentication_token", "s__zfCz-3YxCy3ecM4sH"], ["created_at", Fri, 13 May 2016 13:33:42 UTC +00:00], ["updated_at", Fri, 13 May 2016 13:33:42 UTC +00:00], ["user_id", 1]]
+  [1m[36m (23.4ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/api/v1/users/get_details" for 127.0.0.1 at 2016-05-13 19:04:00 +0530
+  [1m[35mAuthenticationToken Load (0.4ms)[0m  SELECT "authentication_tokens".* FROM "authentication_tokens" WHERE "authentication_tokens"."authentication_token" IS NULL LIMIT 1
+
+
+Started POST "/api/v1/services_without_token/login" for 127.0.0.1 at 2016-05-13 19:04:11 +0530
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'rahul.sharma@gmail.com' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'rahul.sharma@gmail.com' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'rahul.sharma@gmail.com' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "authentication_tokens" ("authentication_token", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["authentication_token", "SdR_8-ChBC-Ct3DomLDT"], ["created_at", Fri, 13 May 2016 13:34:11 UTC +00:00], ["updated_at", Fri, 13 May 2016 13:34:11 UTC +00:00], ["user_id", 1]]
+  [1m[35m (16.5ms)[0m  COMMIT
+
+
+Started GET "/api/v1/users/is_logged_in" for 127.0.0.1 at 2016-05-13 19:04:23 +0530
+  [1m[36mAuthenticationToken Load (0.6ms)[0m  [1mSELECT "authentication_tokens".* FROM "authentication_tokens" WHERE "authentication_tokens"."authentication_token" IS NULL LIMIT 1[0m
+
+
+Started GET "/api/v1/users/get_details" for 127.0.0.1 at 2016-05-13 19:04:56 +0530
+  [1m[35mAuthenticationToken Load (0.9ms)[0m  SELECT "authentication_tokens".* FROM "authentication_tokens" WHERE "authentication_tokens"."authentication_token" IS NULL LIMIT 1
+
+
+Started GET "/api/v1/users/get_details" for 127.0.0.1 at 2016-05-13 19:05:27 +0530
+  [1m[36mAuthenticationToken Load (0.8ms)[0m  [1mSELECT "authentication_tokens".* FROM "authentication_tokens" WHERE "authentication_tokens"."authentication_token" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "authentication_tokens".* FROM "authentication_tokens" WHERE "authentication_tokens"."authentication_token" IS NULL LIMIT 1
+
+
+Started POST "/api/v1/services_without_token/login" for 127.0.0.1 at 2016-05-13 19:05:40 +0530
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'rahul.sharma@gmail.com' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'rahul.sharma@gmail.com' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'rahul.sharma@gmail.com' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "authentication_tokens" ("authentication_token", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["authentication_token", "KnywQc2y4RCQbqEM-JFF"], ["created_at", Fri, 13 May 2016 13:35:40 UTC +00:00], ["updated_at", Fri, 13 May 2016 13:35:40 UTC +00:00], ["user_id", 1]]
+  [1m[35m (13.0ms)[0m  COMMIT
+
+
+Started GET "/api/v1/users/get_details" for 127.0.0.1 at 2016-05-13 19:05:54 +0530
+  [1m[36mAuthenticationToken Load (0.4ms)[0m  [1mSELECT "authentication_tokens".* FROM "authentication_tokens" WHERE "authentication_tokens"."authentication_token" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "authentication_tokens".* FROM "authentication_tokens" WHERE "authentication_tokens"."authentication_token" IS NULL LIMIT 1
+
+
+Started GET "/api/v1/users/get_details" for 127.0.0.1 at 2016-05-13 19:16:32 +0530
+  [1m[36mAuthenticationToken Load (0.6ms)[0m  [1mSELECT "authentication_tokens".* FROM "authentication_tokens" WHERE "authentication_tokens"."authentication_token" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "authentication_tokens".* FROM "authentication_tokens" WHERE "authentication_tokens"."authentication_token" IS NULL LIMIT 1
+
+
+Started GET "/api/v1/users/get_details" for 127.0.0.1 at 2016-05-13 19:17:44 +0530
+  [1m[36mAuthenticationToken Load (0.3ms)[0m  [1mSELECT "authentication_tokens".* FROM "authentication_tokens" WHERE "authentication_tokens"."authentication_token" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "authentication_tokens".* FROM "authentication_tokens" WHERE "authentication_tokens"."authentication_token" IS NULL LIMIT 1
+
+
+Started GET "/api/v1/users/get_details" for 127.0.0.1 at 2016-05-13 19:19:33 +0530
+  [1m[36mAuthenticationToken Load (0.3ms)[0m  [1mSELECT "authentication_tokens".* FROM "authentication_tokens" WHERE "authentication_tokens"."authentication_token" = 'KnywQc2y4RCQbqEM-JFF' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "authentication_tokens".* FROM "authentication_tokens" WHERE "authentication_tokens"."authentication_token" = 'KnywQc2y4RCQbqEM-JFF' LIMIT 1
+  [1m[36mAuthenticationToken Load (0.4ms)[0m  [1mSELECT "authentication_tokens".* FROM "authentication_tokens" WHERE "authentication_tokens"."authentication_token" = 'KnywQc2y4RCQbqEM-JFF' ORDER BY "authentication_tokens"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+
+
+Started GET "/api/v1/users/get_details" for 127.0.0.1 at 2016-05-13 19:20:31 +0530
+  [1m[36mAuthenticationToken Load (0.8ms)[0m  [1mSELECT "authentication_tokens".* FROM "authentication_tokens" WHERE "authentication_tokens"."authentication_token" = 'KnywQc2y4RCQbqEM-JFF' LIMIT 1[0m
+  [1m[35mAuthenticationToken Load (0.3ms)[0m  SELECT "authentication_tokens".* FROM "authentication_tokens" WHERE "authentication_tokens"."authentication_token" = 'KnywQc2y4RCQbqEM-JFF' ORDER BY "authentication_tokens"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+
+
+Started POST "/api/v1/users/edit" for 127.0.0.1 at 2016-05-13 19:21:28 +0530
+  [1m[35mAuthenticationToken Load (1.6ms)[0m  SELECT "authentication_tokens".* FROM "authentication_tokens" WHERE "authentication_tokens"."authentication_token" = 'V5VZ3p1qExGRAA3Ly3oS' LIMIT 1
+  [1m[36mAuthenticationToken Load (0.4ms)[0m  [1mSELECT "authentication_tokens".* FROM "authentication_tokens" WHERE "authentication_tokens"."authentication_token" = 'V5VZ3p1qExGRAA3Ly3oS' ORDER BY "authentication_tokens"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+
+
+Started GET "/api/v1/users/get_details" for 127.0.0.1 at 2016-05-13 19:21:37 +0530
+  [1m[36mAuthenticationToken Load (0.4ms)[0m  [1mSELECT "authentication_tokens".* FROM "authentication_tokens" WHERE "authentication_tokens"."authentication_token" = 'KnywQc2y4RCQbqEM-JFF' LIMIT 1[0m
+  [1m[35mAuthenticationToken Load (0.5ms)[0m  SELECT "authentication_tokens".* FROM "authentication_tokens" WHERE "authentication_tokens"."authentication_token" = 'KnywQc2y4RCQbqEM-JFF' ORDER BY "authentication_tokens"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-13 19:25:55 +0530
+  [1m[35mAuthenticationToken Load (0.3ms)[0m  SELECT "authentication_tokens".* FROM "authentication_tokens" WHERE "authentication_tokens"."authentication_token" = 'V5VZ3p1qExGRAA3Ly3oS' LIMIT 1
+  [1m[36mShop Load (0.2ms)[0m  [1mSELECT "shops".* FROM "shops"[0m
+
+
+Started GET "/api/v1/users/get_details" for 127.0.0.1 at 2016-05-13 19:26:02 +0530
+  [1m[35mAuthenticationToken Load (5.6ms)[0m  SELECT "authentication_tokens".* FROM "authentication_tokens" WHERE "authentication_tokens"."authentication_token" = 'KnywQc2y4RCQbqEM-JFF' LIMIT 1
+  [1m[36mAuthenticationToken Load (1.2ms)[0m  [1mSELECT "authentication_tokens".* FROM "authentication_tokens" WHERE "authentication_tokens"."authentication_token" = 'KnywQc2y4RCQbqEM-JFF' ORDER BY "authentication_tokens"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+
+
+Started GET "/api/v1/users/get_details" for 127.0.0.1 at 2016-05-13 19:26:50 +0530
+  [1m[36mAuthenticationToken Load (0.4ms)[0m  [1mSELECT "authentication_tokens".* FROM "authentication_tokens" WHERE "authentication_tokens"."authentication_token" = 'KnywQc2y4RCQbqEM-JFF' LIMIT 1[0m
+  [1m[35mAuthenticationToken Load (0.5ms)[0m  SELECT "authentication_tokens".* FROM "authentication_tokens" WHERE "authentication_tokens"."authentication_token" = 'KnywQc2y4RCQbqEM-JFF' ORDER BY "authentication_tokens"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+
+
+Started GET "/api/v1/users/get_details" for 127.0.0.1 at 2016-05-13 19:29:26 +0530
+  [1m[35mAuthenticationToken Load (0.3ms)[0m  SELECT "authentication_tokens".* FROM "authentication_tokens" WHERE "authentication_tokens"."authentication_token" = 'KnywQc2y4RCQbqEM-JFF' LIMIT 1
+  [1m[36mAuthenticationToken Load (0.4ms)[0m  [1mSELECT "authentication_tokens".* FROM "authentication_tokens" WHERE "authentication_tokens"."authentication_token" = 'KnywQc2y4RCQbqEM-JFF' ORDER BY "authentication_tokens"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+
+
+Started GET "/api/v1/users/get_details" for 127.0.0.1 at 2016-05-13 19:29:51 +0530
+  [1m[36mAuthenticationToken Load (0.3ms)[0m  [1mSELECT "authentication_tokens".* FROM "authentication_tokens" WHERE "authentication_tokens"."authentication_token" = 'KnywQc2y4RCQbqEM-JFF' LIMIT 1[0m
+  [1m[35mAuthenticationToken Load (0.3ms)[0m  SELECT "authentication_tokens".* FROM "authentication_tokens" WHERE "authentication_tokens"."authentication_token" = 'KnywQc2y4RCQbqEM-JFF' ORDER BY "authentication_tokens"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+
+
+Started GET "/api/v1/users/get_details" for 127.0.0.1 at 2016-05-13 19:30:20 +0530
+  [1m[35mAuthenticationToken Load (0.3ms)[0m  SELECT "authentication_tokens".* FROM "authentication_tokens" WHERE "authentication_tokens"."authentication_token" = 'KnywQc2y4RCQbqEM-JFF' LIMIT 1
+  [1m[36mAuthenticationToken Load (0.6ms)[0m  [1mSELECT "authentication_tokens".* FROM "authentication_tokens" WHERE "authentication_tokens"."authentication_token" = 'KnywQc2y4RCQbqEM-JFF' ORDER BY "authentication_tokens"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+
+
+Started GET "/api/v1/users/get_details" for 127.0.0.1 at 2016-05-13 19:31:24 +0530
+  [1m[36mAuthenticationToken Load (0.7ms)[0m  [1mSELECT "authentication_tokens".* FROM "authentication_tokens" WHERE "authentication_tokens"."authentication_token" = 'KnywQc2y4RCQbqEM-JFF' LIMIT 1[0m
+  [1m[35mAuthenticationToken Load (0.3ms)[0m  SELECT "authentication_tokens".* FROM "authentication_tokens" WHERE "authentication_tokens"."authentication_token" = 'KnywQc2y4RCQbqEM-JFF' ORDER BY "authentication_tokens"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+
+
+Started GET "/api/v1/users/get_details" for 127.0.0.1 at 2016-05-13 19:32:21 +0530
+  [1m[35mAuthenticationToken Load (0.2ms)[0m  SELECT "authentication_tokens".* FROM "authentication_tokens" WHERE "authentication_tokens"."authentication_token" = 'KnywQc2y4RCQbqEM-JFF' LIMIT 1
+  [1m[36mAuthenticationToken Load (0.6ms)[0m  [1mSELECT "authentication_tokens".* FROM "authentication_tokens" WHERE "authentication_tokens"."authentication_token" = 'KnywQc2y4RCQbqEM-JFF' ORDER BY "authentication_tokens"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+
+
+Started POST "/api/v1/users/edit" for 127.0.0.1 at 2016-05-13 19:45:05 +0530
+  [1m[36mAuthenticationToken Load (0.6ms)[0m  [1mSELECT "authentication_tokens".* FROM "authentication_tokens" WHERE "authentication_tokens"."authentication_token" = 'V5VZ3p1qExGRAA3Ly3oS' LIMIT 1[0m
+  [1m[35mAuthenticationToken Load (0.4ms)[0m  SELECT "authentication_tokens".* FROM "authentication_tokens" WHERE "authentication_tokens"."authentication_token" = 'V5VZ3p1qExGRAA3Ly3oS' ORDER BY "authentication_tokens"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/api/v1/users/get_details" for 127.0.0.1 at 2016-05-13 19:45:32 +0530
+  [1m[35mAuthenticationToken Load (0.4ms)[0m  SELECT "authentication_tokens".* FROM "authentication_tokens" WHERE "authentication_tokens"."authentication_token" = 'KnywQc2y4RCQbqEM-JFF' LIMIT 1
+  [1m[36mAuthenticationToken Load (0.2ms)[0m  [1mSELECT "authentication_tokens".* FROM "authentication_tokens" WHERE "authentication_tokens"."authentication_token" = 'KnywQc2y4RCQbqEM-JFF' ORDER BY "authentication_tokens"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+
+
+Started POST "/api/v1/users/edit" for 127.0.0.1 at 2016-05-13 19:48:24 +0530
+  [1m[36mAuthenticationToken Load (0.4ms)[0m  [1mSELECT "authentication_tokens".* FROM "authentication_tokens" WHERE "authentication_tokens"."authentication_token" = 'V5VZ3p1qExGRAA3Ly3oS' LIMIT 1[0m
+  [1m[35mAuthenticationToken Load (0.5ms)[0m  SELECT "authentication_tokens".* FROM "authentication_tokens" WHERE "authentication_tokens"."authentication_token" = 'V5VZ3p1qExGRAA3Ly3oS' ORDER BY "authentication_tokens"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/api/v1/users/get_details" for 127.0.0.1 at 2016-05-13 19:48:29 +0530
+  [1m[35mAuthenticationToken Load (0.5ms)[0m  SELECT "authentication_tokens".* FROM "authentication_tokens" WHERE "authentication_tokens"."authentication_token" = 'KnywQc2y4RCQbqEM-JFF' LIMIT 1
+  [1m[36mAuthenticationToken Load (0.3ms)[0m  [1mSELECT "authentication_tokens".* FROM "authentication_tokens" WHERE "authentication_tokens"."authentication_token" = 'KnywQc2y4RCQbqEM-JFF' ORDER BY "authentication_tokens"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+
+
+Started GET "/api/v1/users/get_details" for 127.0.0.1 at 2016-05-13 19:49:45 +0530
+  [1m[36mAuthenticationToken Load (0.4ms)[0m  [1mSELECT "authentication_tokens".* FROM "authentication_tokens" WHERE "authentication_tokens"."authentication_token" = 'KnywQc2y4RCQbqEM-JFF' LIMIT 1[0m
+  [1m[35mAuthenticationToken Load (0.4ms)[0m  SELECT "authentication_tokens".* FROM "authentication_tokens" WHERE "authentication_tokens"."authentication_token" = 'KnywQc2y4RCQbqEM-JFF' ORDER BY "authentication_tokens"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+
+
+Started GET "/api/v1/users/get_details" for 127.0.0.1 at 2016-05-13 19:50:21 +0530
+  [1m[35mAuthenticationToken Load (0.4ms)[0m  SELECT "authentication_tokens".* FROM "authentication_tokens" WHERE "authentication_tokens"."authentication_token" = 'KnywQc2y4RCQbqEM-JFF' LIMIT 1
+  [1m[36mAuthenticationToken Load (0.3ms)[0m  [1mSELECT "authentication_tokens".* FROM "authentication_tokens" WHERE "authentication_tokens"."authentication_token" = 'KnywQc2y4RCQbqEM-JFF' ORDER BY "authentication_tokens"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+
+
+Started GET "/api/v1/users/get_details" for 127.0.0.1 at 2016-05-13 19:51:11 +0530
+  [1m[36mAuthenticationToken Load (0.4ms)[0m  [1mSELECT "authentication_tokens".* FROM "authentication_tokens" WHERE "authentication_tokens"."authentication_token" = 'KnywQc2y4RCQbqEM-JFF' LIMIT 1[0m
+  [1m[35mAuthenticationToken Load (0.8ms)[0m  SELECT "authentication_tokens".* FROM "authentication_tokens" WHERE "authentication_tokens"."authentication_token" = 'KnywQc2y4RCQbqEM-JFF' ORDER BY "authentication_tokens"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+
+
+Started GET "/api/v1/users/logout" for 127.0.0.1 at 2016-05-13 19:51:57 +0530
+  [1m[35mAuthenticationToken Load (0.5ms)[0m  SELECT "authentication_tokens".* FROM "authentication_tokens" WHERE "authentication_tokens"."authentication_token" = 'KnywQc2y4RCQbqEM-JFF' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "authentication_tokens".* FROM "authentication_tokens" WHERE "authentication_tokens"."authentication_token" = 'KnywQc2y4RCQbqEM-JFF' LIMIT 1[0m
+
+
+Started GET "/api/v1/users/logout" for 127.0.0.1 at 2016-05-13 19:53:08 +0530
+  [1m[35mAuthenticationToken Load (0.6ms)[0m  SELECT "authentication_tokens".* FROM "authentication_tokens" WHERE "authentication_tokens"."authentication_token" = 'KnywQc2y4RCQbqEM-JFF' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "authentication_tokens".* FROM "authentication_tokens" WHERE "authentication_tokens"."authentication_token" = 'KnywQc2y4RCQbqEM-JFF' LIMIT 1[0m
+
+
+Started GET "/api/v1/users/logout" for 127.0.0.1 at 2016-05-13 19:55:00 +0530
+  [1m[35mAuthenticationToken Load (0.3ms)[0m  SELECT "authentication_tokens".* FROM "authentication_tokens" WHERE "authentication_tokens"."authentication_token" = 'KnywQc2y4RCQbqEM-JFF' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "authentication_tokens".* FROM "authentication_tokens" WHERE "authentication_tokens"."authentication_token" = 'KnywQc2y4RCQbqEM-JFF' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mDELETE FROM "authentication_tokens" WHERE "authentication_tokens"."id" = $1[0m  [["id", 4]]
+  [1m[35m (8.7ms)[0m  COMMIT
+
+
+Started GET "/api/v1/users/logout" for 127.0.0.1 at 2016-05-13 19:57:24 +0530
+  [1m[36mAuthenticationToken Load (0.3ms)[0m  [1mSELECT "authentication_tokens".* FROM "authentication_tokens" WHERE "authentication_tokens"."authentication_token" = 'KnywQc2y4RCQbqEM-JFF' LIMIT 1[0m
+
+
+Started GET "/api/v1/users/logout" for 127.0.0.1 at 2016-05-13 19:57:42 +0530
+  [1m[35mAuthenticationToken Load (8.6ms)[0m  SELECT "authentication_tokens".* FROM "authentication_tokens" WHERE "authentication_tokens"."authentication_token" = 'V5VZ3p1qExGRAA3Ly3oS' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "authentication_tokens".* FROM "authentication_tokens" WHERE "authentication_tokens"."authentication_token" = 'V5VZ3p1qExGRAA3Ly3oS' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mDELETE FROM "authentication_tokens" WHERE "authentication_tokens"."id" = $1[0m  [["id", 1]]
+  [1m[35m (20.0ms)[0m  COMMIT
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-13 20:01:52 +0530
+  [1m[36mAuthenticationToken Load (0.8ms)[0m  [1mSELECT "authentication_tokens".* FROM "authentication_tokens" WHERE "authentication_tokens"."authentication_token" IS NULL LIMIT 1[0m
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-13 20:02:00 +0530
+  [1m[35mAuthenticationToken Load (0.4ms)[0m  SELECT "authentication_tokens".* FROM "authentication_tokens" WHERE "authentication_tokens"."authentication_token" IS NULL LIMIT 1
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-13 20:02:33 +0530
+  [1m[36mAuthenticationToken Load (1.1ms)[0m  [1mSELECT "authentication_tokens".* FROM "authentication_tokens" WHERE "authentication_tokens"."authentication_token" IS NULL LIMIT 1[0m
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-13 20:02:40 +0530
+  [1m[35mAuthenticationToken Load (0.4ms)[0m  SELECT "authentication_tokens".* FROM "authentication_tokens" WHERE "authentication_tokens"."authentication_token" IS NULL LIMIT 1
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-13 20:02:45 +0530
+  [1m[36mAuthenticationToken Load (0.4ms)[0m  [1mSELECT "authentication_tokens".* FROM "authentication_tokens" WHERE "authentication_tokens"."authentication_token" IS NULL LIMIT 1[0m
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-13 20:03:01 +0530
+  [1m[35mAuthenticationToken Load (0.4ms)[0m  SELECT "authentication_tokens".* FROM "authentication_tokens" WHERE "authentication_tokens"."authentication_token" IS NULL LIMIT 1
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-13 20:03:14 +0530
+  [1m[36mAuthenticationToken Load (0.4ms)[0m  [1mSELECT "authentication_tokens".* FROM "authentication_tokens" WHERE "authentication_tokens"."authentication_token" IS NULL LIMIT 1[0m
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-13 20:05:28 +0530
+  [1m[35mShop Load (0.3ms)[0m  SELECT "shops".* FROM "shops"
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-13 20:05:50 +0530
+  [1m[36mShop Load (0.4ms)[0m  [1mSELECT "shops".* FROM "shops"[0m
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-13 20:06:27 +0530
+  [1m[35mShop Load (0.3ms)[0m  SELECT "shops".* FROM "shops"
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-13 20:06:34 +0530
+  [1m[36mShop Load (0.4ms)[0m  [1mSELECT "shops".* FROM "shops"[0m
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-13 20:06:59 +0530
+  [1m[35mShop Load (0.3ms)[0m  SELECT "shops".* FROM "shops"
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-13 20:07:18 +0530
+  [1m[36mShop Load (0.4ms)[0m  [1mSELECT "shops".* FROM "shops"[0m
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-13 20:07:40 +0530
+  [1m[35mShop Load (0.4ms)[0m  SELECT "shops".* FROM "shops"
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-13 20:08:02 +0530
+  [1m[36mShop Load (0.4ms)[0m  [1mSELECT "shops".* FROM "shops"[0m
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-13 20:08:41 +0530
+  [1m[35mShop Load (0.3ms)[0m  SELECT "shops".* FROM "shops"
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-13 20:08:45 +0530
+  [1m[36mShop Load (0.4ms)[0m  [1mSELECT "shops".* FROM "shops"[0m
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-13 20:14:04 +0530
+  [1m[35mShop Load (0.5ms)[0m  SELECT "shops".* FROM "shops"
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-13 20:14:29 +0530
+  [1m[36mShop Load (0.4ms)[0m  [1mSELECT "shops".* FROM "shops"[0m
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-13 20:14:56 +0530
+  [1m[35mShop Load (0.3ms)[0m  SELECT "shops".* FROM "shops"
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-13 20:15:25 +0530
+  [1m[36mShop Load (0.3ms)[0m  [1mSELECT "shops".* FROM "shops"[0m
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-13 20:15:44 +0530
+  [1m[35mShop Load (0.3ms)[0m  SELECT "shops".* FROM "shops"
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-13 20:15:48 +0530
+  [1m[36mShop Load (0.3ms)[0m  [1mSELECT "shops".* FROM "shops"[0m
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-13 20:15:54 +0530
+  [1m[35mShop Load (0.4ms)[0m  SELECT "shops".* FROM "shops"
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-13 20:17:32 +0530
+  [1m[36mShop Load (0.4ms)[0m  [1mSELECT "shops".* FROM "shops"[0m
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-13 20:17:44 +0530
+  [1m[35mShop Load (0.3ms)[0m  SELECT "shops".* FROM "shops"
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-13 20:17:52 +0530
+  [1m[36mShop Load (0.4ms)[0m  [1mSELECT "shops".* FROM "shops"[0m
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-13 20:19:23 +0530
+  [1m[35mShop Load (1.6ms)[0m  SELECT "shops".* FROM "shops"
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-13 20:19:40 +0530
+  [1m[36mShop Load (0.4ms)[0m  [1mSELECT "shops".* FROM "shops"[0m
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-13 20:19:43 +0530
+  [1m[35mShop Load (0.4ms)[0m  SELECT "shops".* FROM "shops"
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-13 20:19:46 +0530
+  [1m[36mShop Load (0.4ms)[0m  [1mSELECT "shops".* FROM "shops"[0m
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-13 20:20:13 +0530
+  [1m[35mShop Load (0.4ms)[0m  SELECT "shops".* FROM "shops"
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-13 20:20:23 +0530
+  [1m[36mShop Load (0.3ms)[0m  [1mSELECT "shops".* FROM "shops"[0m
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-13 20:20:28 +0530
+  [1m[35mShop Load (0.5ms)[0m  SELECT "shops".* FROM "shops"
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-13 20:20:33 +0530
+  [1m[36mShop Load (0.4ms)[0m  [1mSELECT "shops".* FROM "shops"[0m
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-13 20:23:56 +0530
+  [1m[35mShop Load (0.6ms)[0m  SELECT "shops".* FROM "shops"
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-13 20:24:22 +0530
+  [1m[36mShop Load (0.5ms)[0m  [1mSELECT "shops".* FROM "shops"[0m
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-13 20:24:55 +0530
+  [1m[35mShop Load (0.4ms)[0m  SELECT "shops".* FROM "shops"
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-13 20:24:59 +0530
+  [1m[36mShop Load (0.4ms)[0m  [1mSELECT "shops".* FROM "shops"[0m
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-13 20:25:19 +0530
+  [1m[35mShop Load (0.4ms)[0m  SELECT "shops".* FROM "shops"
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-13 20:25:22 +0530
+  [1m[36mShop Load (0.4ms)[0m  [1mSELECT "shops".* FROM "shops"[0m
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-13 20:26:29 +0530
+  [1m[35mShop Load (0.3ms)[0m  SELECT "shops".* FROM "shops"
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-13 20:26:32 +0530
+  [1m[36mShop Load (0.3ms)[0m  [1mSELECT "shops".* FROM "shops"[0m
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-13 20:27:12 +0530
+  [1m[35mShop Load (0.4ms)[0m  SELECT "shops".* FROM "shops"
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-13 20:27:19 +0530
+  [1m[36mShop Load (0.4ms)[0m  [1mSELECT "shops".* FROM "shops"[0m
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-13 20:27:21 +0530
+  [1m[35mShop Load (0.4ms)[0m  SELECT "shops".* FROM "shops"
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-13 20:28:40 +0530
+  [1m[36mShop Load (0.3ms)[0m  [1mSELECT "shops".* FROM "shops"[0m
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-13 20:28:44 +0530
+  [1m[35mShop Load (0.3ms)[0m  SELECT "shops".* FROM "shops"
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-13 20:29:04 +0530
+  [1m[36mShop Load (0.4ms)[0m  [1mSELECT "shops".* FROM "shops"[0m
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-13 20:29:10 +0530
+  [1m[35mShop Load (0.3ms)[0m  SELECT "shops".* FROM "shops"
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-13 20:29:20 +0530
+  [1m[36mShop Load (0.9ms)[0m  [1mSELECT "shops".* FROM "shops"[0m
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-13 20:29:23 +0530
+  [1m[35mShop Load (0.4ms)[0m  SELECT "shops".* FROM "shops"
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-13 20:29:24 +0530
+  [1m[36mShop Load (0.4ms)[0m  [1mSELECT "shops".* FROM "shops"[0m
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-13 20:30:10 +0530
+  [1m[35mShop Load (2.0ms)[0m  SELECT "shops".* FROM "shops"
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-13 20:30:14 +0530
+  [1m[36mShop Load (0.3ms)[0m  [1mSELECT "shops".* FROM "shops"[0m
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-13 20:31:24 +0530
+  [1m[35mShop Load (0.4ms)[0m  SELECT "shops".* FROM "shops"
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-13 20:37:13 +0530
+  [1m[36mShop Load (0.4ms)[0m  [1mSELECT "shops".* FROM "shops"[0m
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-13 20:37:35 +0530
+  [1m[35mShop Load (0.5ms)[0m  SELECT "shops".* FROM "shops"
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-13 20:38:06 +0530
+  [1m[36mShop Load (0.4ms)[0m  [1mSELECT "shops".* FROM "shops"[0m
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-13 20:38:12 +0530
+  [1m[35mShop Load (0.4ms)[0m  SELECT "shops".* FROM "shops"
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-13 20:38:12 +0530
+  [1m[36mShop Load (0.3ms)[0m  [1mSELECT "shops".* FROM "shops"[0m
+
+
+Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-13 20:38:18 +0530
+  [1m[35mShop Load (0.4ms)[0m  SELECT "shops".* FROM "shops"

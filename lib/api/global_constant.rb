@@ -1,5 +1,7 @@
 module API
   module GlobalConstant
+    AUTHENTICATION_FLAG_TRUE = true
+    AUTHENTICATION_FLAG_FALSE = false
     SUCCESS_STATUS = 0
     ERROR_STATUS = -1
     HTTP_ERROR_CODE = 201
