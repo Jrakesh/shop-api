@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160513102648) do
+ActiveRecord::Schema.define(version: 20160517112409) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,28 @@ ActiveRecord::Schema.define(version: 20160513102648) do
 
   add_index "authentication_tokens", ["user_id"], name: "index_authentication_tokens_on_user_id", using: :btree
 
+  create_table "privileges", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "role_privileges", force: true do |t|
+    t.integer  "role_id"
+    t.integer  "privilege_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "role_privileges", ["privilege_id"], name: "index_role_privileges_on_privilege_id", using: :btree
+  add_index "role_privileges", ["role_id"], name: "index_role_privileges_on_role_id", using: :btree
+
+  create_table "roles", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "shops", force: true do |t|
     t.string   "name"
     t.string   "address"
@@ -33,6 +55,16 @@ ActiveRecord::Schema.define(version: 20160513102648) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "user_roles", force: true do |t|
+    t.integer  "role_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "user_roles", ["role_id"], name: "index_user_roles_on_role_id", using: :btree
+  add_index "user_roles", ["user_id"], name: "index_user_roles_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "first_name",             default: "", null: false

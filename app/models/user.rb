@@ -6,15 +6,24 @@ class User < ActiveRecord::Base
 
   has_many :authentication_tokens
 
+  include API::GlobalConstant
+
   def create(first_name, last_name, sex, date, email, password)
     begin
       User.create!(
           first_name: first_name,
-                   last_name: last_name,
-                   sex: sex,
-                   date_of_birth: date,
-                   email: email,
-                   password: password
+             last_name: last_name,
+             sex: sex,
+             date_of_birth: date,
+             email: email,
+             password: password
+      )
+      # Added default user role as a user
+      role_user_id = Role.where(name: 'User').first.id
+      @user = User.last
+      UserRole.create!(
+          user_id: @user.id,
+          role_id: role_user_id
       )
     rescue Exception => e
       raise DataBaseException.new e
