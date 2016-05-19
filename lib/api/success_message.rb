@@ -11,7 +11,11 @@ module API
         'PRIVILEGE_CREATED' => 'Privilege successfully created.',
         'PRIVILEGE_DELETED' => 'Privilege successfully deleted.',
         'ROLE_CREATED'      => 'Role successfully created.',
-        'ROLE_DELETED'      => 'Role successfully deleted.'
+        'ROLE_DELETED'      => 'Role successfully deleted.',
+        'PRIVILEGE_EDITED'  => 'Privilege successfully edited.',
+        'ROLE_EDITED'       => 'Role successfully edited.',
+        'ROLE_CHANGED'      => 'Role has successfully changed.',
+        'PRIVILEGE_CHANGED' => 'Privileges has successfully changed.'
     }
   end
 end

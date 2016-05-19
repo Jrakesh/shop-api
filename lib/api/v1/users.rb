@@ -61,6 +61,14 @@ module API
             presentable_error_response("INTERNAL_ISSUE")
           end
         end
+
+        def get_all_user
+          begin
+            return prepare_success_response(User.new.get_all_user)
+          rescue DataBaseException => e
+            presentable_error_response("INTERNAL_ISSUE")
+          end
+        end
       end
 
       resource :users do
@@ -73,19 +81,24 @@ module API
           return logout
         end
 
-        desc 'Edit user deatils (Edit User)'
+        desc 'Edit user details'
         post '/edit' do
           return edit(params)
         end
 
-        desc 'Is logged in (Is Looged In)'
+        desc 'Is logged in'
         get '/is_logged_in' do
           return is_logged_in(params)
         end
 
-        desc 'User profile details (User Details)'
+        desc 'User profile details'
         get '/get_details' do
           return get_details
+        end
+
+        desc 'Get all user'
+        get '/get_all_user' do
+          return get_all_user
         end
       end
     end

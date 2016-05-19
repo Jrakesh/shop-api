@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :authentication_tokens
+  has_many :user_roles
 
   include API::GlobalConstant
 
@@ -32,8 +33,23 @@ class User < ActiveRecord::Base
 
   def create_authentication_token(user)
     begin
+      @user_role = user.user_roles
+      @role = Role.find((@user_role.as_json)[0]["role_id"])
+      @role_privileges = @role.role_privileges
+      privileges = []
+      @role_privileges.each do |role_privilege|
+        privileges << Privilege.where(id: role_privilege.privilege_id).first.name
+      end
       authentication_token = user.authentication_tokens.create
-      return {'authentication_token' => authentication_token.authentication_token}
+
+      return {
+          authentication_token: authentication_token.authentication_token,
+          user: {
+              first_name: user.first_name,
+              last_name: user.last_name
+          },
+          privileges: privileges
+      }
     rescue Exception => e
       raise DataBaseException.new e
     end
@@ -50,6 +66,14 @@ class User < ActiveRecord::Base
       )
     rescue Exception => e
       raise DataBaseException.new e
+    end
+  end
+
+  def find_by_id(id)
+    begin
+      return User.find_by_id(id).present?
+    rescue DataBaseException => e
+      presentable_error_response('INTERNAL_ISSUE')
     end
   end
 
@@ -75,6 +99,14 @@ class User < ActiveRecord::Base
       User.find_by(email: email).present? && user.valid_password?(password)
     rescue Exception => e
       raise DataBaseException.new e
+    end
+  end
+
+  def get_all_user
+    begin
+      return User.all.order(:first_name)
+    rescue DataBaseException => e
+      presentable_error_response('INTERNAL_ISSUE')
     end
   end
 

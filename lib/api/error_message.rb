@@ -23,7 +23,8 @@ module API
         'PRIVILEGE_NOT_EXISTS'       => '-120',
         'BLANK_ROLE_DATA'            => '-121',
         'ROLE_ALREADY_EXISTS'        => '-122',
-        'ROLE_NOT_EXISTS'            => '-123'
+        'ROLE_NOT_EXISTS'            => '-123',
+        'USER_NOT_EXISTS'            => '-124'
     }
 
     ERROR_MESSAGES = {
@@ -49,7 +50,8 @@ module API
         '-120' => 'Privilege not exists.',
         '-121' => 'Role data is blank.',
         '-122' => 'Role already exists.',
-        '-123' => 'Role not exists.'
+        '-123' => 'Role not exists.',
+        '-124' => 'User not exists.'
     }
   end
 end

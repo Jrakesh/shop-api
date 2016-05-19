@@ -13,6 +13,8 @@ class Privilege < ActiveRecord::Base
           privilege_id: @privilege.id,
           role_id: role_user_id
       )
+
+      return @privilege
     rescue DataBaseException => e
       presentable_error_response('INTERNAL_ISSUE')
     end
@@ -22,6 +24,20 @@ class Privilege < ActiveRecord::Base
     begin
       @privilege = Privilege.find(id)
       @privilege.destroy
+      RolePrivilege.destroy_all(privilege_id: id)
+    rescue DataBaseException => e
+      presentable_error_response('INTERNAL_ISSUE')
+    end
+
+    return true
+  end
+
+  def edit(id, name)
+    begin
+      @privilege = Privilege.find(id)
+      @privilege.update!(
+          name: name
+      )
     rescue DataBaseException => e
       presentable_error_response('INTERNAL_ISSUE')
     end
@@ -31,7 +47,7 @@ class Privilege < ActiveRecord::Base
 
   def get_all_privilege
     begin
-      return Privilege.all
+      return Privilege.all.order(:name)
     rescue DataBaseException => e
       presentable_error_response('INTERNAL_ISSUE')
     end
