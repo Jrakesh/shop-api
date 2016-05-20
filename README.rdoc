@@ -43,6 +43,29 @@ Installation guide for Ubuntu 14.04 LTS:
     Setting up Bower
         sudo npm install -g bower
 
+Rails API App installation guide:
+    Take clone
+        git clone https://rahulsharma_neo@bitbucket.org/rahulsharma_neo/google-map-api.git
+    bundle install
+    rake db:create
+    rake db:migrate
+    rails s (To start a server)
+    Global url to access API is:
+        http://localhost:3000/api/v1/
+    Local url which append on global url like:
+        shops/delete
+        shops/create
+        shops/edit, etc.
+
+Angular UI App installation guide:
+    open cmd and enter "cd /var/www/html/"
+    Take clone here
+        git clone https://rahulsharma_neo@bitbucket.org/rahulsharma_neo/google-map-ui.git
+        npm install
+        bower install
+    And open browser and enter url:
+        localhost/google-map-ui
+
 * Deployment instructions
 
     Heroku credentials:
