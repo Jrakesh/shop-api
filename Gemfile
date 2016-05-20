@@ -32,6 +32,8 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+gem 'rails_12factor', group: :production
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
@@ -52,3 +54,5 @@ gem 'rest-client'
 gem 'faker'
 gem 'pry'
 gem 'devise'
+
+ruby "1.9.3p484"

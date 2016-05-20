@@ -13588,3 +13588,55 @@ Started POST "/api/v1/services_without_token/login" for 127.0.0.1 at 2016-05-19 
 
 Started GET "/api/v1/shops/get_all_details" for 127.0.0.1 at 2016-05-19 14:50:00 +0530
   [1m[36mShop Load (0.4ms)[0m  [1mSELECT "shops".* FROM "shops"[0m
+
+
+Started POST "/api/v1/services_without_token/login" for 127.0.0.1 at 2016-05-19 15:55:21 +0530
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'rahul@gmail.com' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'rahul@gmail.com' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'rahul@gmail.com' LIMIT 1
+  [1m[36mUserRole Load (1.6ms)[0m  [1mSELECT "user_roles".* FROM "user_roles" WHERE "user_roles"."user_id" = $1[0m  [["user_id", 6]]
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles" WHERE "roles"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mRolePrivilege Load (0.2ms)[0m  [1mSELECT "role_privileges".* FROM "role_privileges" WHERE "role_privileges"."role_id" = $1[0m  [["role_id", 1]]
+  [1m[35mPrivilege Load (0.2ms)[0m  SELECT "privileges".* FROM "privileges" WHERE "privileges"."id" = 10 ORDER BY "privileges"."id" ASC LIMIT 1
+  [1m[36mPrivilege Load (5.0ms)[0m  [1mSELECT "privileges".* FROM "privileges" WHERE "privileges"."id" = 11 ORDER BY "privileges"."id" ASC LIMIT 1[0m
+  [1m[35mPrivilege Load (0.4ms)[0m  SELECT "privileges".* FROM "privileges" WHERE "privileges"."id" = 12 ORDER BY "privileges"."id" ASC LIMIT 1
+  [1m[36mPrivilege Load (0.2ms)[0m  [1mSELECT "privileges".* FROM "privileges" WHERE "privileges"."id" = 18 ORDER BY "privileges"."id" ASC LIMIT 1[0m
+  [1m[35mPrivilege Load (0.3ms)[0m  SELECT "privileges".* FROM "privileges" WHERE "privileges"."id" = 19 ORDER BY "privileges"."id" ASC LIMIT 1
+  [1m[36mPrivilege Load (0.3ms)[0m  [1mSELECT "privileges".* FROM "privileges" WHERE "privileges"."id" = 20 ORDER BY "privileges"."id" ASC LIMIT 1[0m
+  [1m[35mPrivilege Load (0.5ms)[0m  SELECT "privileges".* FROM "privileges" WHERE "privileges"."id" = 21 ORDER BY "privileges"."id" ASC LIMIT 1
+  [1m[36mPrivilege Load (2.3ms)[0m  [1mSELECT "privileges".* FROM "privileges" WHERE "privileges"."id" = 22 ORDER BY "privileges"."id" ASC LIMIT 1[0m
+  [1m[35mPrivilege Load (0.3ms)[0m  SELECT "privileges".* FROM "privileges" WHERE "privileges"."id" = 23 ORDER BY "privileges"."id" ASC LIMIT 1
+  [1m[36mPrivilege Load (0.2ms)[0m  [1mSELECT "privileges".* FROM "privileges" WHERE "privileges"."id" = 24 ORDER BY "privileges"."id" ASC LIMIT 1[0m
+  [1m[35mPrivilege Load (0.2ms)[0m  SELECT "privileges".* FROM "privileges" WHERE "privileges"."id" = 25 ORDER BY "privileges"."id" ASC LIMIT 1
+  [1m[36mPrivilege Load (0.2ms)[0m  [1mSELECT "privileges".* FROM "privileges" WHERE "privileges"."id" = 26 ORDER BY "privileges"."id" ASC LIMIT 1[0m
+  [1m[35mPrivilege Load (0.8ms)[0m  SELECT "privileges".* FROM "privileges" WHERE "privileges"."id" = 27 ORDER BY "privileges"."id" ASC LIMIT 1
+  [1m[36mPrivilege Load (0.3ms)[0m  [1mSELECT "privileges".* FROM "privileges" WHERE "privileges"."id" = 28 ORDER BY "privileges"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (2.4ms)[0m  [1mINSERT INTO "authentication_tokens" ("authentication_token", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["authentication_token", "kDqv8oXQuLVQRsGSTGoy"], ["created_at", Thu, 19 May 2016 10:25:22 UTC +00:00], ["updated_at", Thu, 19 May 2016 10:25:22 UTC +00:00], ["user_id", 6]]
+  [1m[35m (24.3ms)[0m  COMMIT
+
+
+Started POST "/api/v1/services_without_token/login" for 127.0.0.1 at 2016-05-19 17:55:47 +0530
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'rahul@gmail.com' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'rahul@gmail.com' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'rahul@gmail.com' LIMIT 1[0m
+  [1m[35mUserRole Load (14.1ms)[0m  SELECT "user_roles".* FROM "user_roles" WHERE "user_roles"."user_id" = $1  [["user_id", 6]]
+  [1m[36mRole Load (0.4ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE "roles"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mRolePrivilege Load (0.5ms)[0m  SELECT "role_privileges".* FROM "role_privileges" WHERE "role_privileges"."role_id" = $1  [["role_id", 1]]
+  [1m[36mPrivilege Load (0.4ms)[0m  [1mSELECT "privileges".* FROM "privileges" WHERE "privileges"."id" = 10 ORDER BY "privileges"."id" ASC LIMIT 1[0m
+  [1m[35mPrivilege Load (0.3ms)[0m  SELECT "privileges".* FROM "privileges" WHERE "privileges"."id" = 11 ORDER BY "privileges"."id" ASC LIMIT 1
+  [1m[36mPrivilege Load (0.3ms)[0m  [1mSELECT "privileges".* FROM "privileges" WHERE "privileges"."id" = 12 ORDER BY "privileges"."id" ASC LIMIT 1[0m
+  [1m[35mPrivilege Load (0.3ms)[0m  SELECT "privileges".* FROM "privileges" WHERE "privileges"."id" = 18 ORDER BY "privileges"."id" ASC LIMIT 1
+  [1m[36mPrivilege Load (0.3ms)[0m  [1mSELECT "privileges".* FROM "privileges" WHERE "privileges"."id" = 19 ORDER BY "privileges"."id" ASC LIMIT 1[0m
+  [1m[35mPrivilege Load (0.3ms)[0m  SELECT "privileges".* FROM "privileges" WHERE "privileges"."id" = 20 ORDER BY "privileges"."id" ASC LIMIT 1
+  [1m[36mPrivilege Load (0.5ms)[0m  [1mSELECT "privileges".* FROM "privileges" WHERE "privileges"."id" = 21 ORDER BY "privileges"."id" ASC LIMIT 1[0m
+  [1m[35mPrivilege Load (0.3ms)[0m  SELECT "privileges".* FROM "privileges" WHERE "privileges"."id" = 22 ORDER BY "privileges"."id" ASC LIMIT 1
+  [1m[36mPrivilege Load (0.3ms)[0m  [1mSELECT "privileges".* FROM "privileges" WHERE "privileges"."id" = 23 ORDER BY "privileges"."id" ASC LIMIT 1[0m
+  [1m[35mPrivilege Load (0.2ms)[0m  SELECT "privileges".* FROM "privileges" WHERE "privileges"."id" = 24 ORDER BY "privileges"."id" ASC LIMIT 1
+  [1m[36mPrivilege Load (0.4ms)[0m  [1mSELECT "privileges".* FROM "privileges" WHERE "privileges"."id" = 25 ORDER BY "privileges"."id" ASC LIMIT 1[0m
+  [1m[35mPrivilege Load (0.5ms)[0m  SELECT "privileges".* FROM "privileges" WHERE "privileges"."id" = 26 ORDER BY "privileges"."id" ASC LIMIT 1
+  [1m[36mPrivilege Load (0.4ms)[0m  [1mSELECT "privileges".* FROM "privileges" WHERE "privileges"."id" = 27 ORDER BY "privileges"."id" ASC LIMIT 1[0m
+  [1m[35mPrivilege Load (0.3ms)[0m  SELECT "privileges".* FROM "privileges" WHERE "privileges"."id" = 28 ORDER BY "privileges"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (4.0ms)[0m  INSERT INTO "authentication_tokens" ("authentication_token", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["authentication_token", "HhQyhcp-X6Fkiin39ysL"], ["created_at", Thu, 19 May 2016 12:25:47 UTC +00:00], ["updated_at", Thu, 19 May 2016 12:25:47 UTC +00:00], ["user_id", 6]]
+  [1m[36m (25.3ms)[0m  [1mCOMMIT[0m
